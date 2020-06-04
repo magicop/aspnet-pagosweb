@@ -1,0 +1,841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D47899E4-2B84-4594-A632-14474FFF4D08}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WS_Ingresos</RootNamespace>
+    <AssemblyName>WS_Ingresos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ephtmltopdf, Version=9.5.0.15048, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpertPdfHtmlToPdf.9.5.0\lib\net40\ephtmltopdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Isapre.Utilidades">
+      <HintPath>Libs\Isapre.Utilidades.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonConfig, Version=1.0.5359.16918, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JsonConfig.1.0.0\lib\JsonConfig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JsonFx, Version=2.0.1209.2802, Culture=neutral, PublicKeyToken=315052dd637f8a52, processorArchitecture=MSIL">
+      <HintPath>..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi, Version=5.1.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.1\lib\net45\Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CargasController.cs" />
+    <Compile Include="Controllers\CertificadosController.cs" />
+    <Compile Include="Controllers\CotizacionesController.cs" />
+    <Compile Include="Controllers\DetalleDeudasController.cs" />
+    <Compile Include="Controllers\DeudasController.cs" />
+    <Compile Include="Controllers\DevolucionExcesosController.cs" />
+    <Compile Include="Controllers\DocumentoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListasController.cs" />
+    <Compile Include="Controllers\PagosController.cs" />
+    <Compile Include="Controllers\PlanillaController.cs" />
+    <Compile Include="Controllers\RecaudacionController.cs" />
+    <Compile Include="Controllers\ReqSuperIntendenciaController.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="Exceptions\IngresosException.cs" />
+    <Compile Include="Filters\SecureResourceAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contracts\IAfiliadoRepository.cs" />
+    <Compile Include="Models\Contracts\ICargasRepository.cs" />
+    <Compile Include="Models\Contracts\IConsultaWebRepository.cs" />
+    <Compile Include="Models\Contracts\ICotizacionesRepository.cs" />
+    <Compile Include="Models\Contracts\IDetalleDeudasRepository.cs" />
+    <Compile Include="Models\Contracts\IDeudasRepository.cs" />
+    <Compile Include="Models\Contracts\IDevolucionExcesosRepository.cs" />
+    <Compile Include="Models\Contracts\IDocumentoRepository.cs" />
+    <Compile Include="Models\Contracts\IEmpleadorRepository.cs" />
+    <Compile Include="Models\Contracts\IListasPagoWebRepository.cs" />
+    <Compile Include="Models\Contracts\IRecaudacionRepository.cs" />
+    <Compile Include="Models\Contracts\IReqSuperIntendenciaRepository.cs" />
+    <Compile Include="Models\Dto\AfiliadoCertificado.cs" />
+    <Compile Include="Models\Dto\Cargas.cs" />
+    <Compile Include="Models\Dto\CartolaCotizacionesViewModel.cs" />
+    <Compile Include="Models\Dto\CartolaExcedentesViewModel.cs" />
+    <Compile Include="Models\Dto\CertificadoCotiza.cs" />
+    <Compile Include="Models\Dto\CertificadoDeudaViewModel.cs" />
+    <Compile Include="Models\Dto\CertificadoSubsidioViewModel.cs" />
+    <Compile Include="Models\Dto\Cotizaciones.cs" />
+    <Compile Include="Models\Dto\CotizacionesSubsidio.cs" />
+    <Compile Include="Models\Dto\CotizacionesSubsidio2.cs" />
+    <Compile Include="Models\Dto\DetalleDeudas.cs" />
+    <Compile Include="Models\Dto\InfoPago.cs" />
+    <Compile Include="Models\Dto\LlenarListas.cs" />
+    <Compile Include="Models\Dto\Pago.cs" />
+    <Compile Include="Models\Dto\PagosAfiliado.cs" />
+    <Compile Include="Models\Dto\Cuenta.cs" />
+    <Compile Include="Models\Dto\Cuponera.cs" />
+    <Compile Include="Models\Dto\DatosAfiliado.cs" />
+    <Compile Include="Models\Dto\DatosEmpleador.cs" />
+    <Compile Include="Models\Dto\DetalleCotizaciones.cs" />
+    <Compile Include="Models\Dto\DetalleDeuda.cs" />
+    <Compile Include="Models\Dto\DetalleExcesosRegistroIndividual.cs" />
+    <Compile Include="Models\Dto\DetallePeriodo.cs" />
+    <Compile Include="Models\Dto\DevolucionExcesos.cs" />
+    <Compile Include="Models\Dto\Documento.cs" />
+    <Compile Include="Models\Dto\Empleador.cs" />
+    <Compile Include="Models\Dto\Excedente.cs" />
+    <Compile Include="Models\Dto\Excedentes.cs" />
+    <Compile Include="Models\Dto\InfoFolioNegociacion.cs" />
+    <Compile Include="Models\Dto\InfoPagoModulo.cs" />
+    <Compile Include="Models\Dto\InfoPagoPlanilla.cs" />
+    <Compile Include="Models\Dto\InfoPlanilla.cs" />
+    <Compile Include="Models\Dto\InventarioDocumento.cs" />
+    <Compile Include="Models\Dto\MapperEntityToDTO.cs" />
+    <Compile Include="Models\Dto\PagoDeudaModel.cs" />
+    <Compile Include="Models\Dto\PagoRecaudacion.cs" />
+    <Compile Include="Models\Dto\Periodo.cs" />
+    <Compile Include="Models\Dto\ReqSuperIntendencia.cs" />
+    <Compile Include="Models\Dto\RespuestaPlanilla.cs" />
+    <Compile Include="Models\Dto\ResultadoStandard.cs" />
+    <Compile Include="Models\Dto\SolicitudDevolucionExcesos.cs" />
+    <Compile Include="Models\Dto\SolicitudReemision.cs" />
+    <Compile Include="Models\Entities\AfiliadoCertificadoEntity.cs">
+      <DependentUpon>EmpleadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BancobroProdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancobroProdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BancobroProdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancobroProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BancobroProdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancobroProdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CargasEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CargasLogEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CargoNewEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CertificadoCotizaEntity.cs">
+      <DependentUpon>EmpleadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DetalleDeudasEntity.cs">
+      <DependentUpon>BuscarPagoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\LlenarListaWebEntity.cs">
+      <DependentUpon>BuscarPagoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PagoRutEntity.cs">
+      <DependentUpon>BuscarPagoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PagoWebEntity.cs">
+      <DependentUpon>BuscarPagoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ConsafilProdModel.Context.cs">
+      <DependentUpon>ConsafilProdModel.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\Entities\ConsafilProdModel.cs">
+      <DependentUpon>ConsafilProdModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\Entities\ConsafilProdModel.Designer.cs">
+      <DependentUpon>ConsafilProdModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\Entities\Cot2000ProdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cot2000ProdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Cot2000ProdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cot2000ProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Cot2000ProdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cot2000ProdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CotizacionEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CotizacionesSubsidio2Entity.cs">
+      <DependentUpon>ConsafilProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\CotizacionesSubsidioEntity.cs">
+      <DependentUpon>ConsafilProdModel.tt</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Entities\DatosAfiliadoEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DatosEmpleadorEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DetalleDeudaEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DetalleExcedenteEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DetallePagoEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DetCotizacionesEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DevolucionExcesoEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DevolucionExcesosEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DocumentoEntity.cs">
+      <DependentUpon>IngresosContModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\EmpleadorModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpleadorModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BuscarPagoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuscarPagoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\EmpleadorModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpleadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BuscarPagoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuscarPagoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\EmpleadorModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpleadorModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\BuscarPagoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuscarPagoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosContModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosContModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosContModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosContModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosContModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosContModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosProdModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosProdModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosProdModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\IngresosProdModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IngresosProdModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\InventarioDocumentoEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PeriodoEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PSucursalSucuModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSucursalSucuModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PSucursalSucuModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSucursalSucuModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\PSucursalSucuModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PSucursalSucuModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ReqSuperIntendenciaEntity.cs">
+      <DependentUpon>Cot2000ProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ReqSuperIntendEntity.cs">
+      <DependentUpon>IngresosContModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\SecuenciaCotizacionesEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\SecuenciaDeudaEntity.cs">
+      <DependentUpon>IngresosProdModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Repositories\AfiliadoRepository.cs" />
+    <Compile Include="Models\Repositories\CargasRepository.cs" />
+    <Compile Include="Models\Repositories\ConsultaWebRepository.cs" />
+    <Compile Include="Models\Repositories\CotizacionesRepository.cs" />
+    <Compile Include="Models\Repositories\DetalleDeudasRepository.cs" />
+    <Compile Include="Models\Repositories\DeudasRepository.cs" />
+    <Compile Include="Models\Repositories\DevolucionExcesosRepository.cs" />
+    <Compile Include="Models\Repositories\DocumentoRepository.cs" />
+    <Compile Include="Models\Repositories\EmpleadorRepository.cs" />
+    <Compile Include="Models\Repositories\ListasPagoWebRepository.cs" />
+    <Compile Include="Models\Repositories\RecaudacionRepository.cs" />
+    <Compile Include="Models\Repositories\ReqSuperIntendenciaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NegociacionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PlanillasServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Isapre.Utilidades.dll" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\botonesV3\logo_certificado.gif" />
+    <Content Include="Content\images\firma_certificado.gif" />
+    <Content Include="Content\images\firma_certificadoVida3.gif" />
+    <Content Include="Content\images\ico_buscador.gif" />
+    <Content Include="Content\images\ico_cambioclave.gif" />
+    <Content Include="Content\images\ico_cargas.gif" />
+    <Content Include="Content\images\ico_certificado.gif" />
+    <Content Include="Content\images\ico_consultas.gif" />
+    <Content Include="Content\images\ico_credencial.gif" />
+    <Content Include="Content\images\ico_datosempleador.gif" />
+    <Content Include="Content\images\ico_datospersonales.gif" />
+    <Content Include="Content\images\ico_examenes.gif" />
+    <Content Include="Content\images\ico_licencias.gif" />
+    <Content Include="Content\images\ico_pesos.gif" />
+    <Content Include="Content\images\ico_plan.gif" />
+    <Content Include="Content\images\ico_reembolso.gif" />
+    <Content Include="Content\images\logo_certificado.gif" />
+    <Content Include="Content\screen.css" />
+    <Content Include="Content\screenVidaTres.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\firma_certificado.gif" />
+    <Content Include="images\firma_certificadoVida3.gif" />
+    <Content Include="Models\Entities\BancobroProdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BancobroProdModel.edmx</DependentUpon>
+      <LastGenOutput>BancobroProdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\BancobroProdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BancobroProdModel.edmx</DependentUpon>
+      <LastGenOutput>BancobroProdModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\ConsafilProdModel.Context.tt">
+      <DependentUpon>ConsafilProdModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConsafilProdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\ConsafilProdModel.edmx.diagram">
+      <DependentUpon>ConsafilProdModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\ConsafilProdModel.tt">
+      <DependentUpon>ConsafilProdModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConsafilProdModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\EmpleadorModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmpleadorModel.edmx</DependentUpon>
+      <LastGenOutput>EmpleadorModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\BuscarPagoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BuscarPagoModel.edmx</DependentUpon>
+      <LastGenOutput>BuscarPagoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\EmpleadorModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmpleadorModel.edmx</DependentUpon>
+      <LastGenOutput>EmpleadorModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\BuscarPagoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BuscarPagoModel.edmx</DependentUpon>
+      <LastGenOutput>BuscarPagoModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Plantilla\Comprobante.html" />
+    <Content Include="Plantilla\ComprobanteDeuda.html" />
+    <Content Include="Plantilla\ComprobanteFolio.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\Entities\ConsafilProdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ConsafilProdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Models\Entities\IngresosProdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IngresosProdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\IngresosProdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresosProdModel.edmx</DependentUpon>
+      <LastGenOutput>IngresosProdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\IngresosProdModel.edmx.diagram">
+      <DependentUpon>IngresosProdModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\IngresosProdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresosProdModel.edmx</DependentUpon>
+      <LastGenOutput>IngresosProdModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Entities\IngresosContModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IngresosContModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\IngresosContModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresosContModel.edmx</DependentUpon>
+      <LastGenOutput>IngresosContModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\IngresosContModel.edmx.diagram">
+      <DependentUpon>IngresosContModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\IngresosContModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IngresosContModel.edmx</DependentUpon>
+      <LastGenOutput>IngresosContModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Entities\Cot2000ProdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Cot2000ProdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\Cot2000ProdModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cot2000ProdModel.edmx</DependentUpon>
+      <LastGenOutput>Cot2000ProdModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\Cot2000ProdModel.edmx.diagram">
+      <DependentUpon>Cot2000ProdModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\Cot2000ProdModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cot2000ProdModel.edmx</DependentUpon>
+      <LastGenOutput>Cot2000ProdModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Entities\PSucursalSucuModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PSucursalSucuModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\PSucursalSucuModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PSucursalSucuModel.edmx</DependentUpon>
+      <LastGenOutput>PSucursalSucuModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\PSucursalSucuModel.edmx.diagram">
+      <DependentUpon>PSucursalSucuModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\PSucursalSucuModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PSucursalSucuModel.edmx</DependentUpon>
+      <LastGenOutput>PSucursalSucuModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Entities\EmpleadorModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmpleadorModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\EmpleadorModel.edmx.diagram">
+      <DependentUpon>EmpleadorModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Entities\BuscarPagoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BuscarPagoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\BuscarPagoModel.edmx.diagram">
+      <DependentUpon>BuscarPagoModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Entities\BancobroProdModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BancobroProdModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\BancobroProdModel.edmx.diagram">
+      <DependentUpon>BancobroProdModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Banmedica.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <None Include="Service References\NegociacionService\Negociacion.wsdl" />
+    <Content Include="Service References\NegociacionService\WS_Ingresos.NegociacionService.ObtenerPagoPorFolioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NegociacionService\WS_Ingresos.NegociacionService.ObtenerPagosPorRutIsapreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NegociacionService\WS_Ingresos.NegociacionService.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PlanillasServices\planillas.disco" />
+    <None Include="Service References\PlanillasServices\configuration91.svcinfo" />
+    <None Include="Service References\PlanillasServices\configuration.svcinfo" />
+    <None Include="Service References\PlanillasServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NegociacionService\Negociacion.disco" />
+    <None Include="Service References\NegociacionService\configuration91.svcinfo" />
+    <None Include="Service References\NegociacionService\configuration.svcinfo" />
+    <None Include="Service References\NegociacionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Web.config.token">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Certificados\CertificadoSubsidioB.cshtml" />
+    <Content Include="Views\Certificados\CertificadoSubsidioV.cshtml" />
+    <Content Include="Views\Certificados\CertificadoDeudaB.cshtml" />
+    <Content Include="Views\Certificados\CertificadoDeudaV.cshtml" />
+    <Content Include="Views\Certificados\CartolaExcedentesB.cshtml" />
+    <Content Include="Views\Certificados\CartolaExcedentesV.cshtml" />
+    <None Include="Service References\PlanillasServices\planillas.wsdl" />
+    <Content Include="Service References\PlanillasServices\WS_Ingresos.PlanillasServices.Planilla.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PlanillasServices\WS_Ingresos.PlanillasServices.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Views\Planilla\CartolaCotizaciones.cshtml" />
+    <Content Include="Views\ConsultaPagos\ViewPage1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NegociacionService\" />
+    <WCFMetadataStorage Include="Service References\PlanillasServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\CartolaCotizaciones\" />
+    <Folder Include="Views\DetalleDeudas\" />
+    <Folder Include="Views\LlenarLista\" />
+    <Folder Include="Views\Pagos\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53416</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53416/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

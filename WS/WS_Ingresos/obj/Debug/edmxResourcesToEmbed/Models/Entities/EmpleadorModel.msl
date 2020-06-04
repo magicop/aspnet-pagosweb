@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmpleadorModelStoreContainer" CdmEntityContainer="EmpleadorEntities">
+    <FunctionImportMapping FunctionImportName="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADOS" FunctionName="EmpleadorModel.Store.PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpleadorModel.AfiliadoCertificadoEntity">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="AFIL_FINICIO_VIGENCIA_BENEFIC" ColumnName="AFIL_FINICIO_VIGENCIA_BENEFIC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADO_COTIZA" FunctionName="EmpleadorModel.Store.PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADO_COTIZA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpleadorModel.AfiliadoCertificadoEntity">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="AFIL_FINICIO_VIGENCIA_BENEFIC" ColumnName="AFIL_FINICIO_VIGENCIA_BENEFIC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_EMPLEADORES_CERTIFICADOS_PRC_CERTIFICADO_COTIZA" FunctionName="EmpleadorModel.Store.PKG_EMPLEADORES_CERTIFICADOS_PRC_CERTIFICADO_COTIZA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpleadorModel.CertificadoCotizaEntity">
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="PACTADO" ColumnName="PACTADO" />
+          <ScalarProperty Name="PAGADO" ColumnName="PAGADO" />
+          <ScalarProperty Name="DNP" ColumnName="DNP" />
+          <ScalarProperty Name="FECHAPAGO" ColumnName="FECHAPAGO" />
+          <ScalarProperty Name="LICENCIA" ColumnName="LICENCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

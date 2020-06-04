@@ -1,0 +1,16 @@
+Usuario BDD:
+ppagosweb
+
+Tablas utilizadas:
+WEB_LOG_PAGO
+WEB_MEDIO_PAGO
+
+Utilización de vistas:
+VW_ESTADO_PAGO
+VW_ISAPRE
+VW_MEDIO_PAGO
+VW_PERIODOS
+VW_TIPO_PAGO
+
+Sinónimos:
+WEB_PAGO_DEUDA_DETALLE (isapreweb)

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio encargado de devolver información referente a las planillas de pago.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas">
+      <s:element name="PagarPlanillas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="isapre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formapago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PagarPlanillasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PagarPlanillasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPlanillasPorFolioPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPlanillasPorFolioPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPlanillasPorFolioPagoResult" type="tns:Planilla" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Planilla">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FolioPago" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaPago" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoPagoEfectivo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="tns:EstadoPlanilla" />
+          <s:element minOccurs="1" maxOccurs="1" name="Isapre" type="tns:Isapre" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntePagador" type="tns:EntidadPagadora" />
+          <s:element minOccurs="0" maxOccurs="1" name="CambioInformacion" type="tns:Parametro" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="tns:Usuario" />
+          <s:element minOccurs="0" maxOccurs="1" name="Deudor" type="tns:Deudor" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgenciaPago" type="tns:Parametro" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetallePlanillas" type="tns:ArrayOfDetallePlanilla" />
+          <s:element minOccurs="0" maxOccurs="1" name="AntecedentesPago" type="tns:ArrayOfAntecedentePagoDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetalleDocumentos" type="tns:ArrayOfDetalleDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EstadoPlanilla">
+        <s:restriction base="s:string">
+          <s:enumeration value="Generada" />
+          <s:enumeration value="Pagada" />
+          <s:enumeration value="Anulada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Isapre">
+        <s:restriction base="s:string">
+          <s:enumeration value="B" />
+          <s:enumeration value="T" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EntidadPagadora">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Persona">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Direcciones" type="tns:ArrayOfDireccion" />
+              <s:element minOccurs="0" maxOccurs="1" name="RepresentanteLegal" type="tns:RepresentanteLegal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Persona" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rut" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitoVerificador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cotizante">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Persona">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Plan" type="tns:Parametro" />
+              <s:element minOccurs="0" maxOccurs="1" name="Deuda" type="tns:Deuda" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Parametro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nemotecnico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Deuda">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Pactada" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RentaImponible" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotizacionLegal" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotizacionLey18566" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotizacionVoluntaria" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Reajuste" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interes" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Recargo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="GastoCobranza" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Honorarios" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Deudor">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Persona">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Direcciones" type="tns:ArrayOfDireccion" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDireccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Direccion" nillable="true" type="tns:Direccion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Direccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comuna" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Usuario">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Persona">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RepresentanteLegal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Persona">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CambioInformacion" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetallePlanilla">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DetallePlanilla" nillable="true" type="tns:DetallePlanilla" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetallePlanilla">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FolioPlanilla" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPlanilla" type="tns:TipoPlanilla" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPago" type="tns:TipoPagoPlanilla" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoEntidadPagadora" type="tns:TipoEntidadPagadora" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecargoDocumentoFecha" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroAfiliados" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cotizantes" type="tns:ArrayOfCotizante" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:date" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoPlanilla">
+        <s:restriction base="s:string">
+          <s:enumeration value="Morosa" />
+          <s:enumeration value="Normal" />
+          <s:enumeration value="Anticipada" />
+          <s:enumeration value="DNP" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoPagoPlanilla">
+        <s:restriction base="s:string">
+          <s:enumeration value="DYP" />
+          <s:enumeration value="DNP" />
+          <s:enumeration value="Gratificacion" />
+          <s:enumeration value="Otras" />
+          <s:enumeration value="Voluntario" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TipoEntidadPagadora">
+        <s:restriction base="s:string">
+          <s:enumeration value="Empleador" />
+          <s:enumeration value="PagoPension" />
+          <s:enumeration value="Independiente" />
+          <s:enumeration value="Voluntario" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfCotizante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cotizante" nillable="true" type="tns:Cotizante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAntecedentePagoDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AntecedentePagoDocumento" nillable="true" type="tns:AntecedentePagoDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AntecedentePagoDocumento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPeriodo" type="tns:TipoPeriodo" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoPago" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TasaInteres" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalInteres" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPagoDocumento" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoPeriodo">
+        <s:restriction base="s:string">
+          <s:enumeration value="Mes" />
+          <s:enumeration value="Dia" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfDetalleDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DetalleDocumento" nillable="true" type="tns:DetalleDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetalleDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Banco" type="tns:Parametro" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoDocumento" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerPlanilla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPlanillaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPlanillaResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="tns:Estado" />
+          <s:element minOccurs="0" maxOccurs="1" name="Planilla" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Estado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoError" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GlosaError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PagarPlanillasSoapIn">
+    <wsdl:part name="parameters" element="tns:PagarPlanillas" />
+  </wsdl:message>
+  <wsdl:message name="PagarPlanillasSoapOut">
+    <wsdl:part name="parameters" element="tns:PagarPlanillasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPlanillasPorFolioPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPlanillasPorFolioPago" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPlanillasPorFolioPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPlanillasPorFolioPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPlanillaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPlanilla" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPlanillaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPlanillaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PlanillasSoap">
+    <wsdl:operation name="PagarPlanillas">
+      <wsdl:input message="tns:PagarPlanillasSoapIn" />
+      <wsdl:output message="tns:PagarPlanillasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanillasPorFolioPago">
+      <wsdl:input message="tns:ObtenerPlanillasPorFolioPagoSoapIn" />
+      <wsdl:output message="tns:ObtenerPlanillasPorFolioPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanilla">
+      <wsdl:input message="tns:ObtenerPlanillaSoapIn" />
+      <wsdl:output message="tns:ObtenerPlanillaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PlanillasSoap" type="tns:PlanillasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PagarPlanillas">
+      <soap:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/PagarPlanillas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanillasPorFolioPago">
+      <soap:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/ObtenerPlanillasPorFolioPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanilla">
+      <soap:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/ObtenerPlanilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PlanillasSoap12" type="tns:PlanillasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PagarPlanillas">
+      <soap12:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/PagarPlanillas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanillasPorFolioPago">
+      <soap12:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/ObtenerPlanillasPorFolioPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlanilla">
+      <soap12:operation soapAction="http://www.Banmedica.cl/Recaudaciones/Bancobro/Planillas/ObtenerPlanilla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Planillas">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio encargado de devolver información referente a las planillas de pago.</wsdl:documentation>
+    <wsdl:port name="PlanillasSoap" binding="tns:PlanillasSoap">
+      <soap:address location="http://qa.servicios.banmedica.cl/negociacionpagos/planillas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PlanillasSoap12" binding="tns:PlanillasSoap12">
+      <soap12:address location="http://qa.servicios.banmedica.cl/negociacionpagos/planillas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

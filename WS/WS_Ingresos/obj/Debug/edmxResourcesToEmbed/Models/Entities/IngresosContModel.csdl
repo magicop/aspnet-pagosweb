@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IngresosContModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IsaWebContEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_DOCUMENTOS_PENDIENTES" ReturnType="Collection(IngresosContModel.DocumentoEntity)">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOS">
+      <Parameter Name="P_RUT_DV" Mode="In" Type="String" />
+      <Parameter Name="P_SOCIEDAD" Mode="In" Type="String" />
+      <Parameter Name="P_ID_MAESTRO" Mode="In" Type="String" />
+      <Parameter Name="P_CUENTA" Mode="In" Type="String" />
+      <Parameter Name="P_DOCUMENTO" Mode="In" Type="String" />
+      <Parameter Name="P_FECHA_DOC" Mode="In" Type="String" />
+      <Parameter Name="P_CLASE_DOC" Mode="In" Type="String" />
+      <Parameter Name="P_DOC_PAGO" Mode="In" Type="String" />
+      <Parameter Name="P_VALOR" Mode="In" Type="String" />
+      <Parameter Name="P_ESTADO" Mode="In" Type="String" />
+      <Parameter Name="P_MOTIVO_GIRO" Mode="In" Type="String" />
+      <Parameter Name="P_POSICION" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+      <Parameter Name="P_FORMA_PAGO" Mode="In" Type="String" />
+      <Parameter Name="P_AGENCIA_DESTINO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_CTACTE_NUMERO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_TIPO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_BANCO" Mode="In" Type="String" />
+      <Parameter Name="P_FORMA_REVALIDACION" Mode="In" Type="String" />
+      <Parameter Name="P_CODIGO_ERROR" Mode="Out" Type="Decimal" />
+      <Parameter Name="P_TEXTO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOSSAP">
+      <Parameter Name="P_RUT_DV" Mode="In" Type="String" />
+      <Parameter Name="P_SOCIEDAD" Mode="In" Type="String" />
+      <Parameter Name="P_ID_MAESTRO" Mode="In" Type="String" />
+      <Parameter Name="P_CUENTA" Mode="In" Type="String" />
+      <Parameter Name="P_DOCUMENTO" Mode="In" Type="String" />
+      <Parameter Name="P_FECHA_DOC" Mode="In" Type="String" />
+      <Parameter Name="P_CLASE_DOC" Mode="In" Type="String" />
+      <Parameter Name="P_DOC_PAGO" Mode="In" Type="String" />
+      <Parameter Name="P_VALOR" Mode="In" Type="String" />
+      <Parameter Name="P_ESTADO" Mode="In" Type="String" />
+      <Parameter Name="P_MOTIVO_GIRO" Mode="In" Type="String" />
+      <Parameter Name="P_POSICION" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+      <Parameter Name="P_FORMA_PAGO" Mode="In" Type="String" />
+      <Parameter Name="P_AGENCIA_DESTINO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_CTACTE_NUMERO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_TIPO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_BANCO" Mode="In" Type="String" />
+      <Parameter Name="P_FORMA_REVALIDACION" Mode="In" Type="String" />
+      <Parameter Name="P_CODIGO_ERROR" Mode="Out" Type="Decimal" />
+      <Parameter Name="P_TEXTO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_HISTORICO_PAGOS_PUBLICO" ReturnType="Collection(IngresosContModel.ReqSuperIntendEntity)">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_TIPORUT" Mode="Out" Type="String" />
+      <Parameter Name="P_ESTADO" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DocumentoEntity">
+    <Property Type="String" Name="RUT" Nullable="false" />
+    <Property Type="String" Name="SOCIEDAD" Nullable="false" />
+    <Property Type="String" Name="ID_MAESTRO" Nullable="true" />
+    <Property Type="String" Name="CUENTA" Nullable="true" />
+    <Property Type="String" Name="DOCUMENTO" Nullable="false" />
+    <Property Type="String" Name="FECHA_DOC" Nullable="true" />
+    <Property Type="String" Name="CLASE_DOC" Nullable="true" />
+    <Property Type="String" Name="DOC_PAGO" Nullable="true" />
+    <Property Type="Decimal" Name="VALOR" Nullable="true" />
+    <Property Type="String" Name="ESTADO" Nullable="true" />
+    <Property Type="String" Name="MOTIVO_GIRO" Nullable="true" />
+    <Property Type="Decimal" Name="POSICION" Nullable="false" />
+    <Property Type="String" Name="GLOSA_TIPO_DOCUMENTO" Nullable="true" />
+    <Property Type="String" Name="GLOSA_ESTADO" Nullable="true" />
+    <Property Type="Decimal" Name="FORMA_REVALIDACION" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ReqSuperIntendEntity">
+    <Property Type="Decimal" Name="AFIL_NRUT" Nullable="true" />
+    <Property Type="String" Name="ISAP_CEMPRESA" Nullable="true" />
+    <Property Type="String" Name="FECHA_EMISION" Nullable="true" />
+    <Property Type="String" Name="MOTIVO" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO" Nullable="true" />
+    <Property Type="String" Name="FORMA_PAGO" Nullable="true" />
+    <Property Type="Decimal" Name="NUMERO_DOCUMENTO" Nullable="false" />
+    <Property Type="String" Name="ESTADO" Nullable="true" />
+    <Property Type="String" Name="PROC_REVALIDACION" Nullable="true" />
+    <Property Type="String" Name="FECHA_EMISION_ORDER" Nullable="true" />
+    <Property Type="String" Name="CHEDA_ESTADO" Nullable="true" />
+    <Property Type="String" Name="PAGE_ESCALAFON" Nullable="true" />
+  </ComplexType>
+</Schema>

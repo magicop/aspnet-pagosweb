@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmpleadorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmpleadorEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADOS" ReturnType="Collection(EmpleadorModel.AfiliadoCertificadoEntity)">
+      <Parameter Name="PR_EMPL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_ISAP_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="OUT_MENSAJEERROR" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADO_COTIZA" ReturnType="Collection(EmpleadorModel.AfiliadoCertificadoEntity)">
+      <Parameter Name="PR_EMPL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_ISAP_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="OUT_MENSAJEERROR" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_CERTIFICADO_COTIZA" ReturnType="Collection(EmpleadorModel.CertificadoCotizaEntity)">
+      <Parameter Name="PR_EMPL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_ISAP_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="OUT_MENSAJEERROR" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="AfiliadoCertificadoEntity">
+    <Property Type="String" Name="NOMBRE" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_NRUT" Nullable="false" />
+    <Property Type="DateTime" Name="AFIL_FINICIO_VIGENCIA_BENEFIC" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CertificadoCotizaEntity">
+    <Property Type="Decimal" Name="PERIODO" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" />
+    <Property Type="String" Name="PACTADO" Nullable="true" />
+    <Property Type="String" Name="PAGADO" Nullable="true" />
+    <Property Type="String" Name="DNP" Nullable="true" />
+    <Property Type="String" Name="FECHAPAGO" Nullable="true" />
+    <Property Type="String" Name="LICENCIA" Nullable="true" />
+  </ComplexType>
+</Schema>

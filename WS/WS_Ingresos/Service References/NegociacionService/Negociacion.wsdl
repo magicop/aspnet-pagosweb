@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio encargado de devolver planillas generadas para realizar pago.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion">
+      <s:element name="ObtenerPagosPorRutIsapre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rut" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="isapre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPagosPorRutIsapreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPagosPorRutIsapreResult" type="tns:ArrayOfPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pago" nillable="true" type="tns:Pago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Folio" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaGeneracion" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="tns:EstadoPlanilla" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoTotal" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Periodos" type="tns:ArrayOfDetallePago" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EstadoPlanilla">
+        <s:restriction base="s:string">
+          <s:enumeration value="Generada" />
+          <s:enumeration value="Pagada" />
+          <s:enumeration value="Anulada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfDetallePago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DetallePago" nillable="true" type="tns:DetallePago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetallePago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Periodo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Monto" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerPagoPorFolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerPagoPorFolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerPagoPorFolioResult" type="tns:Pago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerPagosPorRutIsapreSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPagosPorRutIsapre" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPagosPorRutIsapreSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPagosPorRutIsapreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPagoPorFolioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerPagoPorFolio" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerPagoPorFolioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerPagoPorFolioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NegociacionSoap">
+    <wsdl:operation name="ObtenerPagosPorRutIsapre">
+      <wsdl:input message="tns:ObtenerPagosPorRutIsapreSoapIn" />
+      <wsdl:output message="tns:ObtenerPagosPorRutIsapreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPagoPorFolio">
+      <wsdl:input message="tns:ObtenerPagoPorFolioSoapIn" />
+      <wsdl:output message="tns:ObtenerPagoPorFolioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NegociacionSoap" type="tns:NegociacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerPagosPorRutIsapre">
+      <soap:operation soapAction="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion/ObtenerPagosPorRutIsapre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPagoPorFolio">
+      <soap:operation soapAction="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion/ObtenerPagoPorFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NegociacionSoap12" type="tns:NegociacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerPagosPorRutIsapre">
+      <soap12:operation soapAction="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion/ObtenerPagosPorRutIsapre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPagoPorFolio">
+      <soap12:operation soapAction="http://www.banmedica.cl/Recuadacion/Bancobro/Negociacion/ObtenerPagoPorFolio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Negociacion">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio encargado de devolver planillas generadas para realizar pago.</wsdl:documentation>
+    <wsdl:port name="NegociacionSoap" binding="tns:NegociacionSoap">
+      <soap:address location="http://qa.servicios.banmedica.cl/negociacionpagos/Negociacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NegociacionSoap12" binding="tns:NegociacionSoap12">
+      <soap12:address location="http://qa.servicios.banmedica.cl/negociacionpagos/Negociacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

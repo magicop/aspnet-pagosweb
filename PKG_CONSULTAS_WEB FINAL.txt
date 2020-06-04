@@ -1,0 +1,255 @@
+create or replace PACKAGE PKG_CONSULTAS_WEB AS
+
+    TYPE cursor_pagos IS REF CURSOR;
+    TYPE cursor_deudas IS REF CURSOR;
+    TYPE cursor_lista IS REF CURSOR;
+
+    PROCEDURE buscar_pago_TEST (idfolio IN NUMBER, rut IN NUMBER, monto IN NUMBER, estado IN NUMBER, fechaDesde IN VARCHAR2, fechaHasta IN VARCHAR2, tipo_pago IN VARCHAR2, medio_pago IN NUMBER, isapre IN NUMBER, except_text OUT VARCHAR2, c_pagos OUT cursor_pagos
+    );
+    PROCEDURE regularizar_pago_test(rut IN ppagosweb.web_log_pago.wlp_rut%type, i_wtp_id IN NUMBER, except_text OUT VARCHAR2);
+    PROCEDURE buscar_pago_rut (rutpago IN NUMBER, except_text OUT VARCHAR2, c_pagos OUT cursor_pagos);
+    PROCEDURE detalles_deudas (periodo IN NUMBER, except_text OUT VARCHAR2, c_deudas OUT cursor_deudas);
+    PROCEDURE llenarListas(accion IN VARCHAR2, except_text OUT VARCHAR2, c_cursor OUT cursor_lista);
+
+END PKG_CONSULTAS_WEB;
+
+----------------------------------------------
+
+create or replace PACKAGE BODY           PKG_CONSULTAS_WEB
+AS
+    PROCEDURE buscar_pago_TEST
+	(
+        idfolio in NUMBER, rut in number, monto in number, estado in number, fechaDesde in varchar2, fechaHasta in varchar2, tipo_pago in varchar2, medio_pago in number, isapre in number, except_text out varchar2, c_pagos out cursor_pagos
+	)
+    AS
+    
+    folio2 number(10);
+    rut2 number(10);
+    monto2 number(10);
+    estado2 number(10);
+    fecha2 Date;
+    tipoPago2 varchar(10);
+    medioPago2 number(2);
+    isapre2 number(10);
+
+    vFechaDesde Date;
+    vFechaHasta Date;
+    BEGIN
+        except_text := ''; 
+
+        if(nvl(fechaDesde, null) is null)then
+            vFechaDesde:=to_date('01/01/1900', 'dd/mm/yyyy');
+        else
+            vFechaDesde:=to_date(fechaDesde, 'dd/mm/yyyy');
+        end if;
+        
+        if(nvl(fechaHasta, null) is null)then
+            vFechaHasta:=to_date('01/01/1900', 'dd/mm/yyyy');
+        else
+            vFechaHasta:=to_date(fechaHasta, 'dd/mm/yyyy');
+        end if;
+
+        BEGIN
+            OPEN c_pagos FOR
+            select wlp.wlp_folio as FOLIO,
+                   wlp.wlp_rut as RUT,
+                   wlp.wlp_monto as MONTO,
+                   wlp.wlp_estado as ESTADO,
+                   wlp.wlp_fecha as FECHA,
+                   wlp.wlp_tipo_pago as TIPOPAGO,
+                   wmp.wmp_id as MEDIOPAGO,
+                   wlp.wmn_id as ISAPRE
+            --into  folio2, rut2, monto2, estado2, fecha2,tipoPago2,medioPago2,isapre2
+            from web_log_pago wlp
+            join web_medio_pago wmp
+            on wlp.wmp_id = wmp.wmp_id
+            where (wlp.wlp_folio = idfolio OR NVL(idfolio, 0) = 0) 
+                  AND (wlp.wlp_rut = rut OR NVL(rut, 0) = 0)
+                  AND (wlp.wlp_monto = monto OR NVL(monto, 0) = 0)
+                  AND (wlp.wlp_estado = estado OR NVL(estado, 0) = 0)
+                  AND TRUNC(wlp.wlp_fecha) BETWEEN vFechaDesde and vFechaHasta
+                  --AND TRUNC(wlp.wlp_fecha) BETWEEN trunc(decode(NVL(fechaDesde, null),null,  to_date('01/01/1900', 'dd/mm/yyyy'), to_date(fechaDesde, 'dd/mm/yyyy')))
+                  ---                                   and trunc(decode(NVL(fechaHasta, null), to_date('31/12/2200','dd/mm/yyyy'), to_date(fechaHasta,'dd/mm/yyyy')))
+                  AND (wlp.wlp_tipo_pago = tipo_pago OR NVL(tipo_pago, null) IS NULL)
+                  AND (wmp.wmp_id = medio_pago OR NVL(medio_pago, 0) = 0)
+                  AND (wlp.wmn_id = isapre OR NVL(isapre,0) = 0)
+            order by wlp.wlp_fecha desc;
+
+ --AND TRUNC(wlp.wlp_fecha) BETWEEN NVL(NVL(fechaDesde, to_date('01/01/1900', 'dd/mm/yyyy')) , to_date(fechaDesde, 'dd/mm/yyyy'))
+                                                     --and NVL(NVL(fechaHasta, to_date('31/12/2200','dd/mm/yyyy')), to_date(fechaHasta,'dd/mm/yyyy'))
+                  --AND (wlp.wlp_tipo_pago = tipo_pago OR tipo_pago IS NULL)
+                  
+            EXCEPTION
+                WHEN NO_DATA_FOUND THEN
+                    dbms_output.put_line('No se encontraron datos.');
+                WHEN TOO_MANY_ROWS THEN
+                    dbms_output.put_line('La sentencia devolvió más de una fila.');
+                WHEN ZERO_DIVIDE THEN
+                    dbms_output.put_line('Se intentó dividir por cero.');
+                WHEN OTHERS THEN
+                    except_text := 'Error desconocido ' || SQLERRM;
+        END;
+
+        --OPEN c_pagos FOR
+
+        --select folio2 as folio, rut2 as rut, monto2 as monto, estado2 as estado, fecha2 as fecha, tipoPago2 as tipoPago, medioPago2 as medioPago, isapre2 as isapre from dual;
+
+
+    END buscar_pago_TEST;
+
+    PROCEDURE regularizar_pago_test
+    (
+        rut in ppagosweb.web_log_pago.wlp_rut%type,
+        i_wtp_id in number,
+        except_text out varchar2
+    )
+    AS
+    BEGIN 
+
+        except_text := ''; 
+
+        UPDATE web_log_pago
+        SET wmp_id = i_wtp_id
+        WHERE wlp_rut = rut;
+
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                dbms_output.put_line('No se encontraron datos.');
+            WHEN TOO_MANY_ROWS THEN
+                dbms_output.put_line('La sentencia devolvió más de una fila.');
+            WHEN ZERO_DIVIDE THEN
+                dbms_output.put_line('Se intentó dividir por cero.');
+            WHEN OTHERS THEN
+                except_text := 'Error desconocido ' || SQLERRM;
+
+    END regularizar_pago_test;
+    
+    PROCEDURE buscar_pago_rut
+	(
+        rutpago in number, except_text out varchar2, c_pagos out cursor_pagos
+	)
+    AS
+    
+    folio2 number(10);
+    rut2 number(10);
+    monto2 number(10);
+    estado2 number(10);
+    fecha2 Date;
+    tipoPago2 varchar(10);
+    medioPago2 number(2);
+    isapre2 number(10);
+
+    BEGIN
+        except_text := ''; 
+
+        BEGIN
+            select wlp.wlp_folio as FOLIO,
+               wlp.wlp_rut as RUT,
+               wlp.wlp_monto as MONTO,
+               wlp.wlp_estado as ESTADO,
+               wlp.wlp_fecha as FECHA,
+               wlp.wlp_tipo_pago as TIPO_PAGO,
+               wmp.wmp_id as MEDIO_PAGO,
+               wlp.wmn_id as ISAPRE
+            into  folio2, rut2, monto2, estado2, fecha2,tipoPago2,medioPago2,isapre2
+            from web_log_pago wlp
+            join web_medio_pago wmp
+            on wlp.wmp_id = wmp.wmp_id
+            where wlp.wlp_rut = rutpago
+            order by wlp.wlp_fecha desc;
+
+            EXCEPTION
+                WHEN NO_DATA_FOUND THEN
+                    dbms_output.put_line('No se encontraron datos.');
+                WHEN TOO_MANY_ROWS THEN
+                    dbms_output.put_line('La sentencia devolvió más de una fila.');
+                WHEN ZERO_DIVIDE THEN
+                    dbms_output.put_line('Se intentó dividir por cero.');
+                WHEN OTHERS THEN
+                    except_text := 'Error desconocido ' || SQLERRM;
+        END;
+
+        OPEN c_pagos FOR
+
+        select folio2 as folio, rut2 as rut, monto2 as monto, estado2 as estado, fecha2 as fecha, tipoPago2 as tipoPago, medioPago2 as medioPago, isapre2 as isapre from dual;
+
+
+    END buscar_pago_rut;
+    
+    PROCEDURE detalles_deudas
+	(
+        periodo IN NUMBER, except_text OUT VARCHAR2, c_deudas out cursor_deudas
+	)
+    AS
+
+    BEGIN
+        except_text := ''; 
+       
+        OPEN c_deudas FOR
+            select pden_folio_pago as FOLIOPAGO, 
+                       pddt_premun as REMUN,
+                       pddt_csubproducto as SUBPRODUCTO,
+                       pddt_mdeuda as DEUDA,
+                       pddt_mreajuste as REAJUSTE,
+                       pddt_minteres as INTERESES,
+                       pddt_mrecargo as RECARGO,
+                       pddt_mhonorario as HONORARIOS,
+                       pddt_mpago_total as PAGOTOTAL
+                from isapreweb.web_pago_deuda_detalle
+                where pddt_premun = periodo;
+            
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                dbms_output.put_line('No se encontraron datos.');
+            WHEN OTHERS THEN
+                except_text := 'Error desconocido ' || SQLERRM;
+
+    END detalles_deudas;
+    
+    PROCEDURE llenarListas
+    (
+        accion IN VARCHAR2, except_text OUT VARCHAR2, c_cursor OUT cursor_lista
+    )
+    AS     
+    BEGIN
+        except_text := '';
+        
+        IF accion = 'periodo' THEN
+           BEGIN
+            OPEN c_cursor FOR
+                select to_char(codigo) as CODIGO, descripcion as DESCRIPCION
+                from vw_periodos;
+           END;
+        ELSIF accion = 'tipopago' THEN
+           BEGIN
+            OPEN c_cursor FOR
+                select to_char(codigo) as CODIGO, descripcion as DESCRIPCION
+                from vw_tipo_pago;
+           END;
+        ELSIF accion = 'estadopago' THEN
+           BEGIN
+            OPEN c_cursor FOR
+                select to_char(codigo) as CODIGO, descripcion as DESCRIPCION
+                from vw_estado_pago;
+           END;
+        ELSIF accion = 'mediopago' THEN
+           BEGIN
+            OPEN c_cursor FOR
+                select to_char(codigo) as CODIGO, descripcion as DESCRIPCION
+                from vw_medio_pago;
+           END;
+        ELSIF accion = 'isapre' THEN
+           BEGIN
+            OPEN c_cursor FOR
+                select to_char(codigo) as CODIGO, descripcion as DESCRIPCION
+                from vw_isapre;
+           END;
+        END IF;
+        
+        EXCEPTION
+            WHEN OTHERS THEN
+                except_text := 'Error desconocido ' || SQLERRM;
+    
+    END llenarListas;
+
+END PKG_CONSULTAS_WEB;

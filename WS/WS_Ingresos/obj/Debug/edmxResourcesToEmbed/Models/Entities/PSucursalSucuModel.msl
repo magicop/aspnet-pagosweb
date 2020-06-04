@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PSucursalSucuModelStoreContainer" CdmEntityContainer="PSucursalSucuEntities">
+    <FunctionImportMapping FunctionImportName="EXCEDENTE_DISPON_WEB" FunctionName="PSucursalSucuModel.Store.EXCEDENTE_DISPON_WEB" />
+    <FunctionImportMapping FunctionImportName="PKG_PAGO_MODULO_SP_INSERTAPAGOMODULO" FunctionName="PSucursalSucuModel.Store.PKG_PAGO_MODULO_SP_INSERTPAGOMODULO" />
+    <FunctionImportMapping FunctionImportName="PKG_PAGO_MODULO_PM_REGISTRA_PAGO" FunctionName="PSucursalSucuModel.Store.PKG_PAGO_MODULO_PM_REGISTRA_PAGO" />
+  </EntityContainerMapping>
+</Mapping>

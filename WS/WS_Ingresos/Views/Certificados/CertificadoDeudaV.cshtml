@@ -1,0 +1,204 @@
+﻿@model  WS_Ingresos.Models.Dto.CertificadoDeudaViewModel
+
+@{
+    Layout = null;
+
+    var gridDeudas = new WebGrid(source: @Model.deudas, canPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Isapre Vida Tres</title>
+    <link href="~/Content/screenVidaTres.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="right-columnImprimir">
+        <div>
+            <table width="100%">
+                <tr>                    
+                    <td width="50%" align="left">
+                        <img src="~/Content/images/botonesV3/logo_certificado.gif" alt="Vida Tres" />
+                    </td>                    
+                    <td width="50%" align="right"></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <h1 align="center">
+            Certificado de Deuda de Cotizaciones
+        </h1>
+        <p align="right">
+            <br />
+            <br />
+            Santiago, @Model.fecha
+        </p>
+        <br />
+        <p>
+            <strong>Datos del Afiliado&nbsp; </strong>
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="65">
+                    <strong>Rut</strong>
+                </td>
+                <td width="265">
+                    @Model.rutAfiliado
+                </td>
+                <td width="80">
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Nombre </strong>
+                </td>
+                <td>
+                    @Model.nombreAfiliado
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Direcci&oacute;n</strong>
+                </td>
+                <td>
+                    @Model.direccion
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Comuna</strong>
+                </td>
+                <td>
+                    @Model.comuna
+                </td>
+                <td>
+                    <strong>Ciudad</strong>
+                </td>
+                <td>
+                    @Model.ciudad
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Fono</strong>
+                </td>
+                <td>
+                    @Model.fono
+                </td>
+                <td>
+                    <strong>Cod. Estado</strong>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="separador">
+        </div>
+        <p>
+            <strong>Per&iacute;odos Adeudados</strong>
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <div class="datos_tabla datos_tablachico">
+            @if (Model.deudas.Count() > 0)
+            {
+                @gridDeudas.GetHtml(
+                                        tableStyle: "datos_tabla datos_tablachico",
+                                        headerStyle: "primero primero_arriba",
+                                        columns:
+                                            gridDeudas.Columns(
+                                                     gridDeudas.Column(columnName: "Periodo", header: "Periodo", style: "primero"),
+                                                     gridDeudas.Column(columnName: "Producto", header: "Producto", style: "centrado"),
+                                                     gridDeudas.Column(columnName: "Glosa", header: "Glosa", style: "centrado"),
+                                                     gridDeudas.Column(columnName: "ValorDeuda", header: "Deuda", style: "centrado"),
+                                                     gridDeudas.Column(columnName: "Reajuste", header: "Reajuste", style: "centrado"),
+                                                     gridDeudas.Column(columnName: "Interes", header: "Interés", style: "centrado"),
+                                                     gridDeudas.Column(columnName: "Total", header: "Total", style: "centrado")
+                                                )
+                                   )
+            }
+            else
+            {
+                <div class="datos_tabla datos_tablachico">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="7" align="center">No Tiene Deudas Actualmente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            }
+            <div class="divTotal">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="border: 0;">
+                            Gastos Cobranza
+                        </td>
+                        <td align="right" style="border: 0;">
+                            @Model.gastosCobranza
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="divTotal">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="border: 0;">
+                            <strong>Total General</strong>
+                        </td>
+                        <td align="right" style="border: 0;">
+                            @Model.totalGeneral
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            <strong>Nota:</strong> Adem&aacute;s de regularizar el saldo adeudado, s&iacute;rvase
+            verificar los datos registrados en la siguiente cartola, relacionado con su identificaci&oacute;n,
+            as&iacute; como los de su actual empleador, de existir error u omisi&oacute;n, inf&oacute;rmelo
+            de inmediato a esta Isapre.
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <table border="0" cellpadding="0" cellspacing="0" align="left">
+            <tr>
+                <td align="left">                    
+                    <img src="~/Content/images/firma_certificadoVida3.gif" alt="firma" width="130" height="121" />
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    pp. Isapre Vida Tres                    
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

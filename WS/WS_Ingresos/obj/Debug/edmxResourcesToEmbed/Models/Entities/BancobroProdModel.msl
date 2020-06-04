@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancobroProdModelStoreContainer" CdmEntityContainer="BancobroProdEntities">
+    <FunctionImportMapping FunctionImportName="PKG_RECAUDACIONES_SP_GENERA_PLANILLA" FunctionName="BancobroProdModel.Store.PKG_RECAUDACIONES_SP_GENERA_PLANILLA" />
+    <FunctionImportMapping FunctionImportName="PKG_RECAUDACIONES_SP_ACT_ESTADO_PLANILLA" FunctionName="BancobroProdModel.Store.PKG_RECAUDACIONES_SP_ACT_ESTADO_PLANILLA" />
+    <FunctionImportMapping FunctionImportName="PKG_RECAUDACIONES_SECUENCIA_PAGOCOTIZA" FunctionName="BancobroProdModel.Store.PKG_RECAUDACIONES_SECUENCIA_PAGOCOTIZA" />
+    <FunctionImportMapping FunctionImportName="PKG_RECAUDACIONES_SECUENCIA_PAGODEUDA" FunctionName="BancobroProdModel.Store.PKG_RECAUDACIONES_SECUENCIA_PAGODEUDA" />
+    <FunctionImportMapping FunctionImportName="PKG_RECAUDACIONES_SP_ACT_AGENCIA" FunctionName="BancobroProdModel.Store.PKG_RECAUDACIONES_SP_ACT_AGENCIA" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BuscarPagoModelStoreContainer" CdmEntityContainer="PagosWebEntities">
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BuscarPagoModel.PagoWebEntity">
+          <ScalarProperty Name="FOLIO" ColumnName="FOLIO" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+          <ScalarProperty Name="MEDIOPAGO" ColumnName="MEDIOPAGO" />
+          <ScalarProperty Name="ISAPRE" ColumnName="ISAPRE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BuscarPagoModel.PagoRutEntity">
+          <ScalarProperty Name="FOLIO" ColumnName="FOLIO" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+          <ScalarProperty Name="MEDIOPAGO" ColumnName="MEDIOPAGO" />
+          <ScalarProperty Name="ISAPRE" ColumnName="ISAPRE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" />
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_LLENARLISTAS" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_LLENARLISTAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BuscarPagoModel.LlenarListaWebEntity">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_DETALLES_DEUDAS" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_DETALLES_DEUDAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BuscarPagoModel.DetalleDeudasEntity">
+          <ScalarProperty Name="FOLIOPAGO" ColumnName="FOLIOPAGO" />
+          <ScalarProperty Name="REMUN" ColumnName="REMUN" />
+          <ScalarProperty Name="SUBPRODUCTO" ColumnName="SUBPRODUCTO" />
+          <ScalarProperty Name="DEUDA" ColumnName="DEUDA" />
+          <ScalarProperty Name="REAJUSTE" ColumnName="REAJUSTE" />
+          <ScalarProperty Name="INTERESES" ColumnName="INTERESES" />
+          <ScalarProperty Name="RECARGO" ColumnName="RECARGO" />
+          <ScalarProperty Name="HONORARIOS" ColumnName="HONORARIOS" />
+          <ScalarProperty Name="PAGOTOTAL" ColumnName="PAGOTOTAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

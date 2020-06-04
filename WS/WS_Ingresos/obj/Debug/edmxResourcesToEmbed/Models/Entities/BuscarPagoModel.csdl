@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BuscarPagoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PagosWebEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" ReturnType="Collection(BuscarPagoModel.PagoWebEntity)">
+      <Parameter Name="IDFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="RUT" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTO" Mode="In" Type="Decimal" />
+      <Parameter Name="ESTADO" Mode="In" Type="Decimal" />
+      <Parameter Name="FECHADESDE" Mode="In" Type="String" />
+      <Parameter Name="FECHAHASTA" Mode="In" Type="String" />
+      <Parameter Name="TIPO_PAGO" Mode="In" Type="String" />
+      <Parameter Name="MEDIO_PAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="ISAPRE" Mode="In" Type="Decimal" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT" ReturnType="Collection(BuscarPagoModel.PagoRutEntity)">
+      <Parameter Name="RUTPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST">
+      <Parameter Name="RUT" Mode="In" Type="Decimal" />
+      <Parameter Name="I_WTP_ID" Mode="In" Type="Decimal" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CONSULTAS_WEB_LLENARLISTAS" ReturnType="Collection(BuscarPagoModel.LlenarListaWebEntity)">
+      <Parameter Name="ACCION" Mode="In" Type="String" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CONSULTAS_WEB_DETALLES_DEUDAS" ReturnType="Collection(BuscarPagoModel.DetalleDeudasEntity)">
+      <Parameter Name="PERIODO" Mode="In" Type="Decimal" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="PagoWebEntity">
+    <Property Type="Decimal" Name="FOLIO" Nullable="true" />
+    <Property Type="Decimal" Name="RUT" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO" Nullable="true" />
+    <Property Type="Decimal" Name="ESTADO" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" />
+    <Property Type="String" Name="TIPOPAGO" Nullable="true" />
+    <Property Type="Decimal" Name="MEDIOPAGO" Nullable="true" />
+    <Property Type="Decimal" Name="ISAPRE" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PagoRutEntity">
+    <Property Type="Decimal" Name="FOLIO" Nullable="true" />
+    <Property Type="Decimal" Name="RUT" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO" Nullable="true" />
+    <Property Type="Decimal" Name="ESTADO" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" />
+    <Property Type="String" Name="TIPOPAGO" Nullable="true" />
+    <Property Type="Decimal" Name="MEDIOPAGO" Nullable="true" />
+    <Property Type="Decimal" Name="ISAPRE" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="LlenarListaWebEntity">
+    <Property Type="String" Name="CODIGO" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetalleDeudasEntity">
+    <Property Type="Decimal" Name="FOLIOPAGO" Nullable="true" />
+    <Property Type="Decimal" Name="REMUN" Nullable="true" />
+    <Property Type="Decimal" Name="SUBPRODUCTO" Nullable="true" />
+    <Property Type="Decimal" Name="DEUDA" Nullable="true" />
+    <Property Type="Decimal" Name="REAJUSTE" Nullable="true" />
+    <Property Type="Decimal" Name="INTERESES" Nullable="true" />
+    <Property Type="Decimal" Name="RECARGO" Nullable="true" />
+    <Property Type="Decimal" Name="HONORARIOS" Nullable="true" />
+    <Property Type="Decimal" Name="PAGOTOTAL" Nullable="true" />
+  </ComplexType>
+</Schema>

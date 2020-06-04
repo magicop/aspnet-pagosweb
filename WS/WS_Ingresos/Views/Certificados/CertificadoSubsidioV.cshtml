@@ -1,0 +1,207 @@
+﻿@model WS_Ingresos.Models.Dto.CertificadoSubsidioViewModel
+
+@{
+    Layout = null;
+
+    var gridCotizaciones = new WebGrid(source: @Model.cotizaciones, canPage: false);
+    var gridSubsidios = new WebGrid(source: @Model.subsidios, canPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Isapre Vida Tres</title>
+    <link href="~/Content/screenVidaTres.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="right-columnImprimir" style="font-size: 12px">
+        <div>
+            <table width="100%">
+                <tr>
+                    <td width="50%" align="left">
+                        <img src="~/Content/images/botonesV3/logo_certificado.gif" alt="Vida Tres" />
+                    </td>
+                    <td width="50%" align="right"></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 align="center">
+            CERTIFICADO
+        </h1>
+        <h1 align="center">
+            SUBSIDIOS POR INCAPACIDAD LABORAL
+        </h1>
+        <p>
+            &nbsp;
+        </p>
+        <p align="right">
+            <br />
+            <br />
+            Santiago, @Model.fecha
+        </p>
+        <br />
+        <br />
+        <br />
+        <p style="line-height: 150%;">
+            <strong>
+                Isapre Vida Tres S.A.
+            </strong>
+            <br />
+            Entidad pagadora de subsidios
+        </p>
+        <br />
+        <br />
+        <p style="line-height: 150%;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Certifica que
+            al(a) Sr(a) <strong>
+                @Model.nombreAfiliado
+            </strong> RUT <strong>
+                @Model.rutAfiliado
+            </strong>,
+            le fueron pagadas por esta institución las cotizaciones por concepto de subsidio
+            por incapacidad laboral, cuyos montos se indican:
+            <br />
+            <br />
+            <div>
+                @gridCotizaciones.GetHtml(
+                                            tableStyle: "datos_tabla datos_tablachico",
+                                            headerStyle: "primero primero_arriba",
+                                            columns:
+                                                gridCotizaciones.Columns(
+                                                    gridCotizaciones.Column(columnName: "PeriodoCot", header: "Periodo Pago", style: "primero"),
+                                                    gridCotizaciones.Column(columnName: "LicenciaCot", header: "Licencia", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "CalTrabCot", header: "Cal. Trab.", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "Imponible", header: "Imponible Diario", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "DiasCot", header: "Días", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "Salud", header: "$ Salud", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "SCesantia", header: "$ S. Cesantía", style: "centrado"),
+                                                    gridCotizaciones.Column(columnName: "AfpCaja", header: "$ AFP/Caja", style: "centrado")
+                                                    )
+                                         )
+            </div>
+            <br />
+            <br />
+            Se extiende el siguiente certificado, para los fines que estime conveniente el afiliado.
+            <br />
+            <br />
+        </p>
+        <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="375">
+                        <img src="~/Content/images/firma_certificadoVida3.gif" alt="firma" width="130" height="121" />
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        pp. Isapre Vida Tres
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </p>
+    </div>
+    <div class="right-columnImprimir" style="font-size: 12px" id="DivSegundo">
+        <h1 style="page-break-after: always;" id="h1Segundo"></h1>
+        <div>
+            <table width="100%">
+                <tr>
+                    <td width="50%" align="left">
+                        <img src="~/Content/images/botonesV3/logo_certificado.gif" alt="Vida Tres" />
+                    </td>
+                    <td width="50%" align="right"></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 align="center">
+            CERTIFICADO
+        </h1>
+        <h1 align="center">
+            SUBSIDIOS POR INCAPACIDAD LABORAL
+        </h1>
+        <p>
+            &nbsp;
+        </p>
+        <p align="right">
+            <br />
+            <br />
+            Santiago, @Model.fecha
+        </p>
+        <br />
+        <br />
+        <br />
+        <p style="line-height: 150%;">
+            <strong>
+                Isapre Vida Tres S.A.
+            </strong>
+            <br />
+            Entidad pagadora de subsidios
+        </p>
+        <br />
+        <br />
+        <p style="line-height: 150%;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Certifica que
+            al(a) Sr(a) <strong>
+                @Model.nombreAfiliado
+            </strong> RUT <strong>
+                @Model.rutAfiliado
+            </strong>,
+            le fueron pagadas por esta institución, los subsidios de Incapacidad Laboral, cuyas
+            rentas y periodos se indican:
+            <br />
+            <br />
+            <div>
+                @gridSubsidios.GetHtml(
+                                        tableStyle: "datos_tabla datos_tablachico",
+                                        headerStyle: "primero primero_arriba",
+                                        columns:
+                                            gridCotizaciones.Columns(
+                                            gridCotizaciones.Column(columnName: "periodoSub", header: "Periodo Pago", style: "primero"),
+                                            gridCotizaciones.Column(columnName: "licenciaSub", header: "Licencia", style: "centrado"),
+                                            gridCotizaciones.Column(columnName: "calTrabSub", header: "Calidad Trab.", style: "centrado"),
+                                            gridCotizaciones.Column(columnName: "diasSub", header: "Días", style: "centrado"),
+                                            gridCotizaciones.Column(columnName: "rentaNeta", header: "Renta Neta ($)", style: "centrado"),
+                                            gridCotizaciones.Column(columnName: "subsidio", header: "Subsidio", style: "centrado")
+                          ))
+            </div>
+            <br />
+            <br />
+            Se extiende el siguiente certificado, para los fines que estime conveniente el afiliado.
+            <br />
+            <br />
+        </p>
+        <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="375">
+                        <img src="~/Content/images/firma_certificadoVida3.gif" alt="firma" width="130" height="121" />
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        pp. Isapre Vida Tres
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </p>
+    </div>
+</body>
+
+</html>

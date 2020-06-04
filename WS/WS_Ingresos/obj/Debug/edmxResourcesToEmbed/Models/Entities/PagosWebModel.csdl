@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PagosWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PagosWebEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" ReturnType="Collection(PagosWebModel.BuscarPagoEntity)">
+      <Parameter Name="IDFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="RUT" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTO" Mode="In" Type="Decimal" />
+      <Parameter Name="ESTADO" Mode="In" Type="Decimal" />
+      <Parameter Name="FECHADESDE" Mode="In" Type="String" />
+      <Parameter Name="FECHAHASTA" Mode="In" Type="String" />
+      <Parameter Name="TIPO_PAGO" Mode="In" Type="String" />
+      <Parameter Name="MEDIO_PAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST">
+      <Parameter Name="RUT" Mode="Out" Type="Decimal" />
+      <Parameter Name="DETALLE" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="BuscarPagoEntity" />
+</Schema>

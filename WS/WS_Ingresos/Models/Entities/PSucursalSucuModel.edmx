@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PSucursalSucuModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="EXCEDENTE_DISPON_WEB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL">
+          <Parameter Name="P_RUT" Type="number" Mode="In" />
+          <Parameter Name="P_ISAPRE" Type="char" Mode="In" />
+          <Parameter Name="P_RETORNO" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_OPCION_GLOSA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_CUENTA" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="PKG_PAGO_MODULO_PM_REGISTRA_PAGO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL" StoreFunctionName="PKG_PAGO_MODULO.PM_REGISTRA_PAGO">
+          <Parameter Name="NAFIL_NRUT" Type="number" Mode="In" />
+          <Parameter Name="SISAP_CEMPRESA" Type="varchar2" Mode="In" />
+          <Parameter Name="NFOLIO" Type="number" Mode="In" />
+          <Parameter Name="NTIPO_PAGO" Type="number" Mode="In" />
+          <Parameter Name="NADMI_RUT" Type="number" Mode="In" />
+          <Parameter Name="NAGEN_CAGENCIA" Type="number" Mode="In" />
+          <Parameter Name="NCODERROR" Type="number" Mode="InOut" />
+          <Parameter Name="STEXTERROR" Type="varchar2" Mode="InOut" />
+        </Function>
+        <Function Name="PKG_PAGO_MODULO_SP_INSERTPAGOMODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL" StoreFunctionName="PKG_PAGO_MODULO.SP_INSERTPAGOMODULO">
+          <Parameter Name="NRUTAFILIADO" Type="number" Mode="In" />
+          <Parameter Name="SCANAL" Type="varchar2" Mode="In" />
+          <Parameter Name="SCODIGOAUT" Type="varchar2" Mode="In" />
+          <Parameter Name="NDBTOTAL" Type="number" Mode="In" />
+          <Parameter Name="DFECHACONTABLE" Type="date" Mode="In" />
+          <Parameter Name="DFECHAPAGO" Type="date" Mode="In" />
+          <Parameter Name="NFOLIO" Type="number" Mode="In" />
+          <Parameter Name="SFORMAPAGO" Type="varchar2" Mode="In" />
+          <Parameter Name="SISAPRE" Type="varchar2" Mode="In" />
+          <Parameter Name="SMARCA" Type="varchar2" Mode="In" />
+          <Parameter Name="NMONTO" Type="number" Mode="In" />
+          <Parameter Name="SNUMEROCTA" Type="varchar2" Mode="In" />
+          <Parameter Name="SNUMEROTARJETA" Type="varchar2" Mode="In" />
+          <Parameter Name="SNUMEROBOLETA" Type="varchar2" Mode="In" />
+          <Parameter Name="SNUMEROOP" Type="varchar2" Mode="In" />
+          <Parameter Name="STERMINAL" Type="varchar2" Mode="In" />
+          <Parameter Name="NTIPOPAGO" Type="number" Mode="In" />
+          <Parameter Name="STIPOTARJETA" Type="varchar2" Mode="In" />
+          <Parameter Name="NCODERROR" Type="number" Mode="Out" />
+          <Parameter Name="STEXTERROR" Type="varchar2" Mode="Out" />
+        </Function>
+        <EntityContainer Name="PSucursalSucuModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PSucursalSucuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PSucursalSucuEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="EXCEDENTE_DISPON_WEB">
+            <Parameter Name="P_RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+            <Parameter Name="P_RETORNO" Mode="Out" Type="String" />
+            <Parameter Name="P_OPCION_GLOSA" Mode="In" Type="String" />
+            <Parameter Name="P_CUENTA" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_PAGO_MODULO_SP_INSERTAPAGOMODULO">
+            <Parameter Name="NRUTAFILIADO" Mode="In" Type="Decimal" />
+            <Parameter Name="SCANAL" Mode="In" Type="String" />
+            <Parameter Name="SCODIGOAUT" Mode="In" Type="String" />
+            <Parameter Name="NDBTOTAL" Mode="In" Type="Decimal" />
+            <Parameter Name="DFECHACONTABLE" Mode="In" Type="DateTime" />
+            <Parameter Name="DFECHAPAGO" Mode="In" Type="DateTime" />
+            <Parameter Name="NFOLIO" Mode="In" Type="Decimal" />
+            <Parameter Name="SFORMAPAGO" Mode="In" Type="String" />
+            <Parameter Name="SISAPRE" Mode="In" Type="String" />
+            <Parameter Name="SMARCA" Mode="In" Type="String" />
+            <Parameter Name="NMONTO" Mode="In" Type="Decimal" />
+            <Parameter Name="SNUMEROCTA" Mode="In" Type="String" />
+            <Parameter Name="SNUMEROTARJETA" Mode="In" Type="String" />
+            <Parameter Name="SNUMEROBOLETA" Mode="In" Type="String" />
+            <Parameter Name="SNUMEROOP" Mode="In" Type="String" />
+            <Parameter Name="STERMINAL" Mode="In" Type="String" />
+            <Parameter Name="NTIPOPAGO" Mode="In" Type="Decimal" />
+            <Parameter Name="STIPOTARJETA" Mode="In" Type="String" />
+            <Parameter Name="NCODERROR" Mode="Out" Type="Decimal" />
+            <Parameter Name="STEXTERROR" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_PAGO_MODULO_PM_REGISTRA_PAGO">
+            <Parameter Name="NAFIL_NRUT" Mode="In" Type="Decimal" />
+            <Parameter Name="SISAP_CEMPRESA" Mode="In" Type="String" />
+            <Parameter Name="NFOLIO" Mode="In" Type="Decimal" />
+            <Parameter Name="NTIPO_PAGO" Mode="In" Type="Decimal" />
+            <Parameter Name="NADMI_RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="NAGEN_CAGENCIA" Mode="In" Type="Decimal" />
+            <Parameter Name="NCODERROR" Mode="InOut" Type="Decimal" />
+            <Parameter Name="STEXTERROR" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PSucursalSucuModelStoreContainer" CdmEntityContainer="PSucursalSucuEntities" >
+          <FunctionImportMapping FunctionImportName="EXCEDENTE_DISPON_WEB" FunctionName="PSucursalSucuModel.Store.EXCEDENTE_DISPON_WEB" />
+          <FunctionImportMapping FunctionImportName="PKG_PAGO_MODULO_SP_INSERTAPAGOMODULO" FunctionName="PSucursalSucuModel.Store.PKG_PAGO_MODULO_SP_INSERTPAGOMODULO" />
+          <FunctionImportMapping FunctionImportName="PKG_PAGO_MODULO_PM_REGISTRA_PAGO" FunctionName="PSucursalSucuModel.Store.PKG_PAGO_MODULO_PM_REGISTRA_PAGO" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

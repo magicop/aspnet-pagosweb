@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConsafilProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CONSAFIL" StoreFunctionName="PKG_SUBSI_LICENCIAS_V2.SP_CERT_SUBSI_1">
+    <Parameter Name="PRM_RUT_AFILIADO" Type="number" Mode="In" />
+    <Parameter Name="PRM_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PRM_PERINI" Type="number" Mode="In" />
+    <Parameter Name="PRM_PERFIN" Type="number" Mode="In" />
+  </Function>
+  <Function Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CONSAFIL" StoreFunctionName="PKG_SUBSI_LICENCIAS_V2.SP_CERT_SUBSI_2">
+    <Parameter Name="PRM_RUT_AFILIADO" Type="number" Mode="In" />
+    <Parameter Name="PRM_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PRM_PERINI" Type="number" Mode="In" />
+    <Parameter Name="PRM_PERFIN" Type="number" Mode="In" />
+  </Function>
+  <EntityContainer Name="ConsafilProdModelStoreContainer" />
+</Schema>

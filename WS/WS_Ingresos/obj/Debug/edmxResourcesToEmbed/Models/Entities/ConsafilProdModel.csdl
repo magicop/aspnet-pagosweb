@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConsafilProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ConsafilProdEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" ReturnType="Collection(ConsafilProdModel.CotizacionesSubsidioEntity)">
+      <Parameter Name="PRM_RUT_AFILIADO" Mode="In" Type="Decimal" />
+      <Parameter Name="PRM_ISAP_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PRM_PERINI" Mode="In" Type="Decimal" />
+      <Parameter Name="PRM_PERFIN" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" ReturnType="Collection(ConsafilProdModel.CotizacionesSubsidio2Entity)">
+      <Parameter Name="PRM_RUT_AFILIADO" Mode="In" Type="Decimal" />
+      <Parameter Name="PRM_ISAP_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PRM_PERINI" Mode="In" Type="Decimal" />
+      <Parameter Name="PRM_PERFIN" Mode="In" Type="Decimal" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CotizacionesSubsidioEntity">
+    <Property Type="String" Name="NOMAFIL" Nullable="true" />
+    <Property Type="Decimal" Name="LICENCIA" Nullable="true" />
+    <Property Type="Decimal" Name="RUTAFIL" Nullable="true" />
+    <Property Type="Decimal" Name="DIAS" Nullable="true" />
+    <Property Type="String" Name="CAFP" Nullable="true" />
+    <Property Type="String" Name="PACO_FINICIO" Nullable="true" />
+    <Property Type="String" Name="PACO_FFINAL" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO" Nullable="true" />
+    <Property Type="Decimal" Name="SALUD" Nullable="true" />
+    <Property Type="Decimal" Name="IMPONIBLE" Nullable="true" />
+    <Property Type="Decimal" Name="TRABAJADOR" Nullable="true" />
+    <Property Type="Decimal" Name="PREVISION" Nullable="true" />
+    <Property Type="Decimal" Name="NCAJAP" Nullable="true" />
+    <Property Type="String" Name="CCAJAP" Nullable="true" />
+    <Property Type="Decimal" Name="MCESANTIA" Nullable="true" />
+    <Property Type="DateTime" Name="PACO_FINICIO_ORDEN" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CotizacionesSubsidio2Entity">
+    <Property Type="String" Name="NOMAFIL" Nullable="true" />
+    <Property Type="Decimal" Name="LICENCIA" Nullable="true" />
+    <Property Type="Decimal" Name="RUTAFIL" Nullable="false" />
+    <Property Type="DateTime" Name="SUBS_FPAGO" Nullable="false" />
+    <Property Type="Decimal" Name="SUBSIDIO" Nullable="true" />
+    <Property Type="String" Name="FINICIO" Nullable="true" />
+    <Property Type="String" Name="FFINAL" Nullable="true" />
+    <Property Type="Decimal" Name="DIAS" Nullable="true" />
+    <Property Type="Decimal" Name="RENTA" Nullable="true" />
+    <Property Type="Decimal" Name="CASU_MRENTA_PROMEDIO" Nullable="false" />
+    <Property Type="Decimal" Name="TRABAJADOR" Nullable="true" />
+  </ComplexType>
+</Schema>

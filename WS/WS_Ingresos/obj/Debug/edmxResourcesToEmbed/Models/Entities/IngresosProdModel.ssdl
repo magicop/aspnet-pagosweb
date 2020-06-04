@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IngresosProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="DATOS_DEL_EMPLEADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB">
+    <Parameter Name="RUTEMP" Type="number" Mode="In" />
+    <Parameter Name="ISAP" Type="varchar2" Mode="In" />
+    <Parameter Name="SQL_EMPL_TAPELLIDO_PATERNO" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_EMPL_TAPELLIDO_MATERNO" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_EMPL_TNOMBRE_RAZON_SOCIAL" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_EMPL_NRUT" Type="number" Mode="Out" />
+    <Parameter Name="SQL_EMPL_XDV" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CEPA_TCALLE" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CEPA_TNUMERO" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CEPA_TDEPTO" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CEPA_TBLOCK" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CEPA_TVILLA" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_COMUNA" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_CIUDAD" Type="varchar2" Mode="Out" />
+    <Parameter Name="SQL_REGION" Type="number" Mode="Out" />
+    <Parameter Name="SQL_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_ANTECEDENTES_DEL_EMPLEADOR_TRAEREMPLEADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_ANTECEDENTES_DEL_EMPLEADOR.TRAEREMPLEADOR">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_PRC_SALDO_EXCESO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.PRC_SALDO_EXCESO">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_SP_FECHA_INVENTARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.SP_FECHA_INVENTARIO">
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+    <Parameter Name="P_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_SP_GENERA_SOLICITUD_EXCESO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.SP_GENERA_SOLICITUD_EXCESO">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_FORMA_PAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_AGENCIA_DESTINO" Type="number" Mode="In" />
+    <Parameter Name="P_CTACTE_NUMERO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_TIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_BANCO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_NUMERO_SOLICITUD" Type="number" Mode="Out" />
+    <Parameter Name="P_TEXTO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_DOCUMENTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.SP_INVENTARIO_DOCUMENTOS">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_SALDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.SP_INVENTARIO_SALDO">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_SALDO_SP_RETORNA_CUENTA_PRINCIPAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_CIRC_EXCESO_SALDO.SP_RETORNA_CUENTA_PRINCIPAL">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_NUMERO_CTA" Type="varchar2" Mode="Out" />
+    <Parameter Name="P_TIPO_CTA" Type="varchar2" Mode="Out" />
+    <Parameter Name="P_BANCO_CTA" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_COMPRA_BONOS_SECUENCIA_WEBPAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COMPRA_BONOS.SECUENCIA_WEBPAY" />
+  <Function Name="PKG_COTIZACIONES_INSERT_DATOS_COTIZA_NEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.INSERT_DATOS_COTIZA_NEW">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_PRECAU" Type="number" Mode="In" />
+    <Parameter Name="PR_PREMUN" Type="number" Mode="In" />
+    <Parameter Name="PR_MPAGO" Type="number" Mode="In" />
+    <Parameter Name="PR_FREFER" Type="date" Mode="In" />
+    <Parameter Name="PR_FCREACION" Type="date" Mode="In" />
+    <Parameter Name="PR_XESTADO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_REAJUSTE" Type="number" Mode="In" />
+    <Parameter Name="PR_INTERES" Type="number" Mode="In" />
+    <Parameter Name="PR_RECARGO" Type="number" Mode="In" />
+    <Parameter Name="PR_TOTAL" Type="number" Mode="In" />
+    <Parameter Name="PR_FOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_WLPID" Type="raw" Mode="In" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_INSERT_PAGO_DEUDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.INSERT_PAGO_DEUDA">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_NPERIODO" Type="number" Mode="In" />
+    <Parameter Name="PR_NMONTO" Type="number" Mode="In" />
+    <Parameter Name="PR_NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NSUBPRODUCTO" Type="number" Mode="In" />
+    <Parameter Name="PR_NDEUDA" Type="number" Mode="In" />
+    <Parameter Name="PR_NREAJUSTE" Type="number" Mode="In" />
+    <Parameter Name="PR_NINTERES" Type="number" Mode="In" />
+    <Parameter Name="PR_NRECARGO" Type="number" Mode="In" />
+    <Parameter Name="PR_NGASTOS" Type="number" Mode="In" />
+    <Parameter Name="PR_NHONORARIO" Type="number" Mode="In" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_SECUENCIA_PAGODEUDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SECUENCIA_PAGODEUDA" />
+  <Function Name="PKG_COTIZACIONES_SP_CART_EXCED" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SP_CART_EXCED">
+    <Parameter Name="PRM_RUT_AFILIADO" Type="number" Mode="In" />
+    <Parameter Name="PRM_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_SP_OBTIENE_CARGONEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SP_OBTIENE_CARGONEW">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_SP_OBTIENE_CUPON_PAGO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SP_OBTIENE_CUPON_PAGO">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_SP_OBTIENE_DEUDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SP_OBTIENE_DEUDA">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_COTIZACIONES_SP_OBTIENE_PERIODO_PAGADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_COTIZACIONES.SP_OBTIENE_PERIODO_PAGADO">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_DETALLE_COTIZACIONES_DETCOTIZACIONES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_DETALLE_COTIZACIONES.DETCOTIZACIONES">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_SNOMAFIL" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_MIS_ANTECEDENTES_DATOS_DEL_AFILIADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_MIS_ANTECEDENTES.DATOS_DEL_AFILIADO">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_MIS_ANTECEDENTES_TRAERCARGAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_MIS_ANTECEDENTES.TRAERCARGAS">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_MIS_ANTECEDENTES_TRAERCARGASLOG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_MIS_ANTECEDENTES.TRAERCARGASLOG">
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_SEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_CARG_CCORR" Type="number" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_PAGOS_RECAUDACIONES_SP_ACTUALIZA_REGRECA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_PAGOS_RECAUDACIONES.SP_ACTUALIZA_REGRECA">
+    <Parameter Name="PR_NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_SFORMAPAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_DETALLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_PAGOS_RECAUDACIONES.SP_INSERT_REGRECA_DETALLE">
+    <Parameter Name="PR_NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_NDEUDA" Type="number" Mode="In" />
+    <Parameter Name="PR_NGASTOCOB" Type="number" Mode="In" />
+    <Parameter Name="PR_NHONORARIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NINTERES" Type="number" Mode="In" />
+    <Parameter Name="PR_NPAGO" Type="number" Mode="In" />
+    <Parameter Name="PR_NREAJUSTE" Type="number" Mode="In" />
+    <Parameter Name="PR_NRECARGO" Type="number" Mode="In" />
+    <Parameter Name="PR_NPERIODORECAU" Type="number" Mode="In" />
+    <Parameter Name="PR_NPERIODOREMUN" Type="number" Mode="In" />
+    <Parameter Name="PR_NSUBPRODUCTO" Type="number" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_ENCABEZADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_PAGOS_RECAUDACIONES.SP_INSERT_REGRECA_ENCABEZADO">
+    <Parameter Name="PR_NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_SMAIL" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_NGASTOCOBTOT" Type="number" Mode="In" />
+    <Parameter Name="PR_NPAGOTOT" Type="number" Mode="In" />
+    <Parameter Name="PR_STIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_PAGOS_RECAUDACIONES_SP_OBTIENE_DETALLE_PAGO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB" StoreFunctionName="PKG_PAGOS_RECAUDACIONES.SP_OBTIENE_DETALLE_PAGO">
+    <Parameter Name="PR_NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="PR_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="PR_STEXT" Type="varchar2" Mode="Out" />
+  </Function>
+  <EntityContainer Name="IngresosProdModelStoreContainer" />
+</Schema>

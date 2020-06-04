@@ -1,0 +1,99 @@
+﻿@using WebPagos.Models.DTO
+
+@model PagoViewModel
+
+<div class="container">
+
+    <center><h1>Consulta Pago Web</h1></center>
+    <br>
+
+    <form id="FormBuscarPago" name="FormBuscarPago" method="POST" action='@Url.Action("Resultado", "Pago")' onsubmit="return validacion()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Rut</label>
+                @Html.TextBoxFor(m => m.rutPago, new { @class = "form-control", placeholder = "Ingrese rut de la persona", type = "number" })
+                <!-- id="txtRut" name="txtRut" type="text" value=""-->
+                
+                <!--<input type="text" class="form-control" id="txtRut" name="txtRut" placeholder="11.111.111-1">-->
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Folio</label>
+                @Html.TextBoxFor(m => m.idFolio, new { @class = "form-control", placeholder = "Ingrese número de folio", type = "number" })
+
+                <!--<input type="text" class="form-control" id="txtFolio" name="txtFolio" placeholder="000001">-->
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Desde</label>
+                @Html.TextBoxFor(m => m.fechaDesde, new { @class = "form-control", placeholder = "01/01/2018", type = "date" })
+                <!--<input type="text" class="form-control" id="txtFechaDesde" name="txtFechaDesde" placeholder="01/01/2019">-->
+            </div>
+            <div class="form-group col-md-6">
+                <label>Hasta</label>
+                @Html.TextBoxFor(m => m.fechaHasta, new { @class = "form-control", placeholder = "01/01/2019", type = "date" })
+
+                <!--<input type="text" class="form-control" id="txtFechaHasta" name="txtFechaHasta" placeholder="01/01/2019">-->
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Isapre</label>
+                @Html.DropDownListFor(model => model.CodIsapre,
+                   new SelectList(Model.isapre, "Value", "Text"), "Selecciona la isapre",
+                   new { @class = "form-control" })
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Monto</label>
+                @Html.TextBoxFor(m => m.montoPago, new { @class = "form-control", placeholder = "Ingrese el monto", type = "number" })
+
+                <!--<input type="text" class="form-control" id="txtMonto" name="txtMonto">-->
+            </div>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label>Medio Pago</label>
+                @Html.DropDownListFor(model => model.CodMedioPago,
+                   new SelectList(Model.medioPago, "Value", "Text"), "Selecciona el medio de pago",
+                   new { @class = "form-control" })
+            </div>
+
+            <div class="form-group col-md-6">
+
+                <label>Tipo Pago</label>
+               
+                @Html.DropDownListFor(model => model.CodTipoPago,
+                   new SelectList(Model.tipoPago, "Value", "Text"), "Selecciona el tipo de pago",
+                   new { @class = "form-control" })
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label>Estado Pago</label>
+                @Html.DropDownListFor(model => model.CodEstadoPago,
+                   new SelectList(Model.estadoPago, "Value", "Text"), "Selecciona el estado del pago",
+                   new { @class = "form-control" })
+            </div>
+
+            <div class="form-group col-md-6">
+                <center>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg" id="btnBuscar" name="btnBuscar" value="Buscar">Buscar</button>
+                    <button type="reset" class="btn btn-success btn-lg" onclick="limpiarFormulario()" value="Limpiar">Limpiar</button>
+                </center>
+            </div>
+        </div>
+
+
+</form>
+
+</div>

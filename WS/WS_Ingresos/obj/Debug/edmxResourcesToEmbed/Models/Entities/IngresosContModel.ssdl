@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IngresosContModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB_CONT" StoreFunctionName="PKG_CIRC_EXCESO_DOCUMENTOS.PRC_ACTIVAR_DOCUMENTOS">
+    <Parameter Name="P_RUT_DV" Type="varchar2" Mode="In" />
+    <Parameter Name="P_SOCIEDAD" Type="varchar2" Mode="In" />
+    <Parameter Name="P_ID_MAESTRO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CUENTA" Type="varchar2" Mode="In" />
+    <Parameter Name="P_DOCUMENTO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FECHA_DOC" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CLASE_DOC" Type="varchar2" Mode="In" />
+    <Parameter Name="P_DOC_PAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_VALOR" Type="varchar2" Mode="In" />
+    <Parameter Name="P_ESTADO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_MOTIVO_GIRO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_POSICION" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FORMA_PAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_AGENCIA_DESTINO" Type="number" Mode="In" />
+    <Parameter Name="P_CTACTE_NUMERO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_TIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_BANCO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FORMA_REVALIDACION" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CODIGO_ERROR" Type="number" Mode="Out" />
+    <Parameter Name="P_TEXTO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOSSAP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB_CONT" StoreFunctionName="PKG_CIRC_EXCESO_DOCUMENTOS.PRC_ACTIVAR_DOCUMENTOSSAP">
+    <Parameter Name="P_RUT_DV" Type="varchar2" Mode="In" />
+    <Parameter Name="P_SOCIEDAD" Type="varchar2" Mode="In" />
+    <Parameter Name="P_ID_MAESTRO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CUENTA" Type="varchar2" Mode="In" />
+    <Parameter Name="P_DOCUMENTO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FECHA_DOC" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CLASE_DOC" Type="varchar2" Mode="In" />
+    <Parameter Name="P_DOC_PAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_VALOR" Type="varchar2" Mode="In" />
+    <Parameter Name="P_ESTADO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_MOTIVO_GIRO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_POSICION" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FORMA_PAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_AGENCIA_DESTINO" Type="number" Mode="In" />
+    <Parameter Name="P_CTACTE_NUMERO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_TIPO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CTACTE_BANCO" Type="varchar2" Mode="In" />
+    <Parameter Name="P_FORMA_REVALIDACION" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CODIGO_ERROR" Type="number" Mode="Out" />
+    <Parameter Name="P_TEXTO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_DOCUMENTOS_PENDIENTES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB_CONT" StoreFunctionName="PKG_CIRC_EXCESO_DOCUMENTOS.PRC_DOCUMENTOS_PENDIENTES">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CANAL" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="SP_HISTORICO_PAGOS_PUBLICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ISAPREWEB_CONT">
+    <Parameter Name="P_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="P_TIPORUT" Type="varchar2" Mode="Out" />
+    <Parameter Name="P_ESTADO" Type="varchar2" Mode="Out" />
+  </Function>
+  <EntityContainer Name="IngresosContModelStoreContainer" />
+</Schema>

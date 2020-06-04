@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PagosWebModelStoreContainer" CdmEntityContainer="PagosWebEntities">
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" FunctionName="PagosWebModel.Store.PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PagosWebModel.BuscarPagoEntity" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" FunctionName="PagosWebModel.Store.PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" />
+  </EntityContainerMapping>
+</Mapping>

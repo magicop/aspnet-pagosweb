@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Cot2000ProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="SP_CONSULTA_CIRCULAR164" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="COT2000">
+    <Parameter Name="P_RUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+  </Function>
+  <EntityContainer Name="Cot2000ProdModelStoreContainer" />
+</Schema>

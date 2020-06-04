@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Cot2000ProdModelStoreContainer" CdmEntityContainer="Cot2000ProdEntities">
+    <FunctionImportMapping FunctionImportName="SP_CONSULTA_CIRCULAR164" FunctionName="Cot2000ProdModel.Store.SP_CONSULTA_CIRCULAR164">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Cot2000ProdModel.ReqSuperIntendenciaEntity">
+          <ScalarProperty Name="TIPO_COTIZACION" ColumnName="TIPO_COTIZACION" />
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NOMBRE_ASEGURADORA" ColumnName="NOMBRE_ASEGURADORA" />
+          <ScalarProperty Name="DESO_PERREMUN_AO" ColumnName="DESO_PERREMUN_AO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

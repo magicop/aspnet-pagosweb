@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ConsafilProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CONSAFIL" StoreFunctionName="PKG_SUBSI_LICENCIAS_V2.SP_CERT_SUBSI_1">
+          <Parameter Name="PRM_RUT_AFILIADO" Type="number" Mode="In" />
+          <Parameter Name="PRM_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+          <Parameter Name="PRM_PERINI" Type="number" Mode="In" />
+          <Parameter Name="PRM_PERFIN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CONSAFIL" StoreFunctionName="PKG_SUBSI_LICENCIAS_V2.SP_CERT_SUBSI_2">
+          <Parameter Name="PRM_RUT_AFILIADO" Type="number" Mode="In" />
+          <Parameter Name="PRM_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+          <Parameter Name="PRM_PERINI" Type="number" Mode="In" />
+          <Parameter Name="PRM_PERFIN" Type="number" Mode="In" />
+        </Function>
+        <EntityContainer Name="ConsafilProdModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConsafilProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ConsafilProdEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" ReturnType="Collection(ConsafilProdModel.CotizacionesSubsidioEntity)">
+            <Parameter Name="PRM_RUT_AFILIADO" Mode="In" Type="Decimal" />
+            <Parameter Name="PRM_ISAP_CEMPRESA" Mode="In" Type="String" />
+            <Parameter Name="PRM_PERINI" Mode="In" Type="Decimal" />
+            <Parameter Name="PRM_PERFIN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" ReturnType="Collection(ConsafilProdModel.CotizacionesSubsidio2Entity)">
+            <Parameter Name="PRM_RUT_AFILIADO" Mode="In" Type="Decimal" />
+            <Parameter Name="PRM_ISAP_CEMPRESA" Mode="In" Type="String" />
+            <Parameter Name="PRM_PERINI" Mode="In" Type="Decimal" />
+            <Parameter Name="PRM_PERFIN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="CotizacionesSubsidioEntity">
+          <Property Type="String" Name="NOMAFIL" Nullable="true" />
+          <Property Type="Decimal" Name="LICENCIA" Nullable="true" />
+          <Property Type="Decimal" Name="RUTAFIL" Nullable="true" />
+          <Property Type="Decimal" Name="DIAS" Nullable="true" />
+          <Property Type="String" Name="CAFP" Nullable="true" />
+          <Property Type="String" Name="PACO_FINICIO" Nullable="true" />
+          <Property Type="String" Name="PACO_FFINAL" Nullable="true" />
+          <Property Type="Decimal" Name="MONTO" Nullable="true" />
+          <Property Type="Decimal" Name="SALUD" Nullable="true" />
+          <Property Type="Decimal" Name="IMPONIBLE" Nullable="true" />
+          <Property Type="Decimal" Name="TRABAJADOR" Nullable="true" />
+          <Property Type="Decimal" Name="PREVISION" Nullable="true" />
+          <Property Type="Decimal" Name="NCAJAP" Nullable="true" />
+          <Property Type="String" Name="CCAJAP" Nullable="true" />
+          <Property Type="Decimal" Name="MCESANTIA" Nullable="true" />
+          <Property Type="DateTime" Name="PACO_FINICIO_ORDEN" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CotizacionesSubsidio2Entity">
+          <Property Type="String" Name="NOMAFIL" Nullable="true" />
+          <Property Type="Decimal" Name="LICENCIA" Nullable="true" />
+          <Property Type="Decimal" Name="RUTAFIL" Nullable="false" />
+          <Property Type="DateTime" Name="SUBS_FPAGO" Nullable="false" />
+          <Property Type="Decimal" Name="SUBSIDIO" Nullable="true" />
+          <Property Type="String" Name="FINICIO" Nullable="true" />
+          <Property Type="String" Name="FFINAL" Nullable="true" />
+          <Property Type="Decimal" Name="DIAS" Nullable="true" />
+          <Property Type="Decimal" Name="RENTA" Nullable="true" />
+          <Property Type="Decimal" Name="CASU_MRENTA_PROMEDIO" Nullable="false" />
+          <Property Type="Decimal" Name="TRABAJADOR" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConsafilProdModelStoreContainer" CdmEntityContainer="ConsafilProdEntities" >
+          <FunctionImportMapping FunctionImportName="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" FunctionName="ConsafilProdModel.Store.PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ConsafilProdModel.CotizacionesSubsidioEntity">
+                <ScalarProperty Name="NOMAFIL" ColumnName="NOMAFIL" />
+                <ScalarProperty Name="LICENCIA" ColumnName="LICENCIA" />
+                <ScalarProperty Name="RUTAFIL" ColumnName="RUTAFIL" />
+                <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+                <ScalarProperty Name="CAFP" ColumnName="CAFP" />
+                <ScalarProperty Name="PACO_FINICIO" ColumnName="PACO_FINICIO" />
+                <ScalarProperty Name="PACO_FFINAL" ColumnName="PACO_FFINAL" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="SALUD" ColumnName="SALUD" />
+                <ScalarProperty Name="IMPONIBLE" ColumnName="IMPONIBLE" />
+                <ScalarProperty Name="TRABAJADOR" ColumnName="TRABAJADOR" />
+                <ScalarProperty Name="PREVISION" ColumnName="PREVISION" />
+                <ScalarProperty Name="NCAJAP" ColumnName="NCAJAP" />
+                <ScalarProperty Name="CCAJAP" ColumnName="CCAJAP" />
+                <ScalarProperty Name="MCESANTIA" ColumnName="MCESANTIA" />
+                <ScalarProperty Name="PACO_FINICIO_ORDEN" ColumnName="PACO_FINICIO_ORDEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" FunctionName="ConsafilProdModel.Store.PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ConsafilProdModel.CotizacionesSubsidio2Entity">
+                <ScalarProperty Name="NOMAFIL" ColumnName="NOMAFIL" />
+                <ScalarProperty Name="LICENCIA" ColumnName="LICENCIA" />
+                <ScalarProperty Name="RUTAFIL" ColumnName="RUTAFIL" />
+                <ScalarProperty Name="SUBS_FPAGO" ColumnName="SUBS_FPAGO" />
+                <ScalarProperty Name="SUBSIDIO" ColumnName="SUBSIDIO" />
+                <ScalarProperty Name="FINICIO" ColumnName="FINICIO" />
+                <ScalarProperty Name="FFINAL" ColumnName="FFINAL" />
+                <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+                <ScalarProperty Name="RENTA" ColumnName="RENTA" />
+                <ScalarProperty Name="CASU_MRENTA_PROMEDIO" ColumnName="CASU_MRENTA_PROMEDIO" />
+                <ScalarProperty Name="TRABAJADOR" ColumnName="TRABAJADOR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

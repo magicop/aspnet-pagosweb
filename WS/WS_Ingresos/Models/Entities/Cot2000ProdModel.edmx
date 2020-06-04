@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Cot2000ProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_CONSULTA_CIRCULAR164" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="COT2000">
+          <Parameter Name="P_RUT" Type="number" Mode="In" />
+          <Parameter Name="P_ISAPRE" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="Cot2000ProdModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cot2000ProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Cot2000ProdEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_CONSULTA_CIRCULAR164" ReturnType="Collection(Cot2000ProdModel.ReqSuperIntendenciaEntity)">
+            <Parameter Name="P_RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="ReqSuperIntendenciaEntity">
+          <Property Type="String" Name="TIPO_COTIZACION" Nullable="true" />
+          <Property Type="String" Name="RUT" Nullable="true" />
+          <Property Type="String" Name="PERIODO" Nullable="true" />
+          <Property Type="String" Name="ESTADO" Nullable="true" />
+          <Property Type="String" Name="NOMBRE_ASEGURADORA" Nullable="true" />
+          <Property Type="Decimal" Name="DESO_PERREMUN_AO" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Cot2000ProdModelStoreContainer" CdmEntityContainer="Cot2000ProdEntities" >
+          <FunctionImportMapping FunctionImportName="SP_CONSULTA_CIRCULAR164" FunctionName="Cot2000ProdModel.Store.SP_CONSULTA_CIRCULAR164" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Cot2000ProdModel.ReqSuperIntendenciaEntity">
+                <ScalarProperty Name="TIPO_COTIZACION" ColumnName="TIPO_COTIZACION" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="NOMBRE_ASEGURADORA" ColumnName="NOMBRE_ASEGURADORA" />
+                <ScalarProperty Name="DESO_PERREMUN_AO" ColumnName="DESO_PERREMUN_AO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

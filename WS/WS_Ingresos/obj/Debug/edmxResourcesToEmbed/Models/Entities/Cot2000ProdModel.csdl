@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Cot2000ProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Cot2000ProdEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_CONSULTA_CIRCULAR164" ReturnType="Collection(Cot2000ProdModel.ReqSuperIntendenciaEntity)">
+      <Parameter Name="P_RUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="ReqSuperIntendenciaEntity">
+    <Property Type="String" Name="TIPO_COTIZACION" Nullable="true" />
+    <Property Type="String" Name="RUT" Nullable="true" />
+    <Property Type="String" Name="PERIODO" Nullable="true" />
+    <Property Type="String" Name="ESTADO" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_ASEGURADORA" Nullable="true" />
+    <Property Type="Decimal" Name="DESO_PERREMUN_AO" Nullable="true" />
+  </ComplexType>
+</Schema>

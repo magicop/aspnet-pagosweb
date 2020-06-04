@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancobroProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BancobroProdEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_RECAUDACIONES_SP_GENERA_PLANILLA">
+      <Parameter Name="IN_FOLIOPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_TIPO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="IN_MGASTOCOBTOTAL" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MGASTOCOB" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_PREMUN" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_CSUBPRODUCTO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MDEUDA" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MREAJUSTE" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MINTERES" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MRECARGO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_MHONORARIO" Mode="In" Type="Decimal" />
+      <Parameter Name="OUT_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_RECAUDACIONES_SP_ACT_ESTADO_PLANILLA">
+      <Parameter Name="IN_FOLIOPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_AGENCIA" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="OUT_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_RECAUDACIONES_SECUENCIA_PAGOCOTIZA">
+      <Parameter Name="OUT_FOLIO" Mode="Out" Type="Decimal" />
+      <Parameter Name="OUT_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_RECAUDACIONES_SECUENCIA_PAGODEUDA">
+      <Parameter Name="OUT_FOLIO" Mode="Out" Type="Decimal" />
+      <Parameter Name="OUT_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_RECAUDACIONES_SP_ACT_AGENCIA">
+      <Parameter Name="IN_AGENCIA" Mode="In" Type="Decimal" />
+      <Parameter Name="IN_FOLIOPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="OUT_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

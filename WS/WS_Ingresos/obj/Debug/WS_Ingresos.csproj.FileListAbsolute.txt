@@ -1,0 +1,189 @@
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\WS_Ingresos.dll.config
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\WS_Ingresos.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\WS_Ingresos.pdb
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Antlr3.Runtime.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\EntityFramework.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\EntityFramework.SqlServer.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Isapre.Utilidades.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\JsonConfig.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\JsonFx.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\log4net.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Web.Infrastructure.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Newtonsoft.Json.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Oracle.ManagedDataAccess.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Net.Http.Formatting.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Helpers.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Http.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Http.WebHost.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Mvc.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Optimization.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Razor.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.Deployment.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.Razor.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Unity.WebApi.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\WebActivatorEx.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\WebGrease.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\EntityFramework.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\EntityFramework.SqlServer.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\JsonConfig.pdb
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\JsonFx.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\log4net.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Newtonsoft.Json.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Net.Http.Formatting.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Helpers.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Http.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Http.WebHost.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Mvc.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Optimization.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.Razor.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.Deployment.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\System.Web.WebPages.Razor.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\Antlr3.Runtime.pdb
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\obj\Debug\WS_Ingresos.csprojResolveAssemblyReference.cache
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\obj\Debug\WS_Ingresos.Resources.ExceptionMessages.resources
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\obj\Debug\WS_Ingresos.csproj.GenerateResource.Cache
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\obj\Debug\WS_Ingresos.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\obj\Debug\WS_Ingresos.pdb
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\ephtmltopdf.dll
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\ephtmltopdf.xml
+C:\TFS\Servicios Web\WS_Ingresos\Main\WS_Ingresos\bin\epengine.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.dll.config
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.pdb
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Antlr3.Runtime.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\EntityFramework.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\EntityFramework.SqlServer.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\ephtmltopdf.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Isapre.Utilidades.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\JsonConfig.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\JsonFx.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\log4net.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Newtonsoft.Json.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Oracle.ManagedDataAccess.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Net.Http.Formatting.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Helpers.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Http.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Http.WebHost.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Mvc.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Optimization.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Razor.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Razor.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Unity.WebApi.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\WebActivatorEx.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\WebGrease.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\EntityFramework.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\EntityFramework.SqlServer.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\ephtmltopdf.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\JsonConfig.pdb
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\JsonFx.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\log4net.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Newtonsoft.Json.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Net.Http.Formatting.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Helpers.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Http.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Http.WebHost.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Mvc.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Optimization.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.Razor.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Razor.xml
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\Antlr3.Runtime.pdb
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\bin\epengine.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.csprojResolveAssemblyReference.cache
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.Resources.ExceptionMessages.resources
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.csproj.GenerateResource.Cache
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.dll
+C:\Users\ext_mcarella\Desktop\WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.pdb
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.dll.config
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\WS_Ingresos.pdb
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Antlr3.Runtime.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\EntityFramework.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\EntityFramework.SqlServer.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\ephtmltopdf.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Isapre.Utilidades.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\JsonConfig.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\JsonFx.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\log4net.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Newtonsoft.Json.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Oracle.ManagedDataAccess.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Net.Http.Formatting.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Helpers.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Http.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Http.WebHost.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Mvc.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Optimization.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Razor.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Razor.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Unity.WebApi.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\WebActivatorEx.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\WebGrease.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\EntityFramework.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\EntityFramework.SqlServer.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\ephtmltopdf.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\JsonConfig.pdb
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\JsonFx.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\log4net.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.Mvc.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Newtonsoft.Json.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Net.Http.Formatting.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Helpers.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Http.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Http.WebHost.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Mvc.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Optimization.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.Razor.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\System.Web.WebPages.Razor.xml
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\Antlr3.Runtime.pdb
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\bin\epengine.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.csprojResolveAssemblyReference.cache
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.Resources.ExceptionMessages.resources
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.csproj.GenerateResource.Cache
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.dll
+C:\Users\ext_mcarella\Desktop\respaldos\soluciones\WebPagos\Consulta Pagos Web\PagosWeb WS_Ingresos\WS_Ingresos\obj\Debug\WS_Ingresos.pdb

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancobroProdModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="PKG_RECAUDACIONES_SECUENCIA_PAGOCOTIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="BANCOBRO" StoreFunctionName="PKG_RECAUDACIONES.SECUENCIA_PAGOCOTIZA">
+    <Parameter Name="OUT_FOLIO" Type="number" Mode="Out" />
+    <Parameter Name="OUT_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_RECAUDACIONES_SECUENCIA_PAGODEUDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="BANCOBRO" StoreFunctionName="PKG_RECAUDACIONES.SECUENCIA_PAGODEUDA">
+    <Parameter Name="OUT_FOLIO" Type="number" Mode="Out" />
+    <Parameter Name="OUT_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_RECAUDACIONES_SP_ACT_AGENCIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="BANCOBRO" StoreFunctionName="PKG_RECAUDACIONES.SP_ACT_AGENCIA">
+    <Parameter Name="IN_AGENCIA" Type="number" Mode="In" />
+    <Parameter Name="IN_FOLIOPAGO" Type="number" Mode="In" />
+    <Parameter Name="OUT_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_RECAUDACIONES_SP_ACT_ESTADO_PLANILLA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="BANCOBRO" StoreFunctionName="PKG_RECAUDACIONES.SP_ACT_ESTADO_PLANILLA">
+    <Parameter Name="IN_FOLIOPAGO" Type="number" Mode="In" />
+    <Parameter Name="IN_AGENCIA" Type="number" Mode="In" />
+    <Parameter Name="IN_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="OUT_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_RECAUDACIONES_SP_GENERA_PLANILLA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="BANCOBRO" StoreFunctionName="PKG_RECAUDACIONES.SP_GENERA_PLANILLA">
+    <Parameter Name="IN_FOLIOPAGO" Type="number" Mode="In" />
+    <Parameter Name="IN_TIPO" Type="number" Mode="In" />
+    <Parameter Name="IN_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="IN_ISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="IN_MGASTOCOBTOTAL" Type="number" Mode="In" />
+    <Parameter Name="IN_MGASTOCOB" Type="number" Mode="In" />
+    <Parameter Name="IN_MPAGO" Type="number" Mode="In" />
+    <Parameter Name="IN_PREMUN" Type="number" Mode="In" />
+    <Parameter Name="IN_CSUBPRODUCTO" Type="number" Mode="In" />
+    <Parameter Name="IN_MDEUDA" Type="number" Mode="In" />
+    <Parameter Name="IN_MREAJUSTE" Type="number" Mode="In" />
+    <Parameter Name="IN_MINTERES" Type="number" Mode="In" />
+    <Parameter Name="IN_MRECARGO" Type="number" Mode="In" />
+    <Parameter Name="IN_MHONORARIO" Type="number" Mode="In" />
+    <Parameter Name="OUT_RETORNO" Type="varchar2" Mode="Out" />
+  </Function>
+  <EntityContainer Name="BancobroProdModelStoreContainer" />
+</Schema>

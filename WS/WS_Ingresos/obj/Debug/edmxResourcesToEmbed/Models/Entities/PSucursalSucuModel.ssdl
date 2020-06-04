@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PSucursalSucuModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="EXCEDENTE_DISPON_WEB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL">
+    <Parameter Name="P_RUT" Type="number" Mode="In" />
+    <Parameter Name="P_ISAPRE" Type="char" Mode="In" />
+    <Parameter Name="P_RETORNO" Type="varchar2" Mode="Out" />
+    <Parameter Name="P_OPCION_GLOSA" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CUENTA" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_PAGO_MODULO_PM_REGISTRA_PAGO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL" StoreFunctionName="PKG_PAGO_MODULO.PM_REGISTRA_PAGO">
+    <Parameter Name="NAFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="SISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="NTIPO_PAGO" Type="number" Mode="In" />
+    <Parameter Name="NADMI_RUT" Type="number" Mode="In" />
+    <Parameter Name="NAGEN_CAGENCIA" Type="number" Mode="In" />
+    <Parameter Name="NCODERROR" Type="number" Mode="InOut" />
+    <Parameter Name="STEXTERROR" Type="varchar2" Mode="InOut" />
+  </Function>
+  <Function Name="PKG_PAGO_MODULO_SP_INSERTPAGOMODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PSUCURSAL" StoreFunctionName="PKG_PAGO_MODULO.SP_INSERTPAGOMODULO">
+    <Parameter Name="NRUTAFILIADO" Type="number" Mode="In" />
+    <Parameter Name="SCANAL" Type="varchar2" Mode="In" />
+    <Parameter Name="SCODIGOAUT" Type="varchar2" Mode="In" />
+    <Parameter Name="NDBTOTAL" Type="number" Mode="In" />
+    <Parameter Name="DFECHACONTABLE" Type="date" Mode="In" />
+    <Parameter Name="DFECHAPAGO" Type="date" Mode="In" />
+    <Parameter Name="NFOLIO" Type="number" Mode="In" />
+    <Parameter Name="SFORMAPAGO" Type="varchar2" Mode="In" />
+    <Parameter Name="SISAPRE" Type="varchar2" Mode="In" />
+    <Parameter Name="SMARCA" Type="varchar2" Mode="In" />
+    <Parameter Name="NMONTO" Type="number" Mode="In" />
+    <Parameter Name="SNUMEROCTA" Type="varchar2" Mode="In" />
+    <Parameter Name="SNUMEROTARJETA" Type="varchar2" Mode="In" />
+    <Parameter Name="SNUMEROBOLETA" Type="varchar2" Mode="In" />
+    <Parameter Name="SNUMEROOP" Type="varchar2" Mode="In" />
+    <Parameter Name="STERMINAL" Type="varchar2" Mode="In" />
+    <Parameter Name="NTIPOPAGO" Type="number" Mode="In" />
+    <Parameter Name="STIPOTARJETA" Type="varchar2" Mode="In" />
+    <Parameter Name="NCODERROR" Type="number" Mode="Out" />
+    <Parameter Name="STEXTERROR" Type="varchar2" Mode="Out" />
+  </Function>
+  <EntityContainer Name="PSucursalSucuModelStoreContainer" />
+</Schema>

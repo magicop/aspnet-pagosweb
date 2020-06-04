@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ex_AfiliadoCotizaciones" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut empleador {0}, rut afiliado {1} e isapre {2}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_AfiliadosCotizaciones" xml:space="preserve">
+    <value>No se pudo obtener información de devolución de excesos para rut empleador {0} y isapre {1} revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Cargas" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Cotizaciones" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Cuentas" xml:space="preserve">
+    <value>No se pudo obtener información de devolución de excesos para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Cuponera" xml:space="preserve">
+    <value>No se pudo obtener informacion al obtener cuponera para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_DatosCotizaNew" xml:space="preserve">
+    <value>No se pudo grabar los datos para rut {0}, periodo {1}, periodoAnt {2}, valorPesos {3}, fechaRef {4}, fechaCreacion {5}, estado {6}, empresa {7}, reajuste {8}, interes {9}, recargo {10}, total {11}, folio {12} e IdPagoByte {13}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Deudas" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_DevolucionExcesos" xml:space="preserve">
+    <value>No se pudo obtener información de devolución de excesos para rut {0}, isapre {1} y canal {2}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_DevolucionExcesosRI" xml:space="preserve">
+    <value>No se pudo obtener información de detalle excesos registro individual para rut {0}, isapre {1} y canal {2}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Documento" xml:space="preserve">
+    <value>No se pudo obtener información de documentos pendientes de cobro para rut {0}, isapre {1} y canal {2}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_Folio" xml:space="preserve">
+    <value>No se pudo obtener folio, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GeneraPlanilla" xml:space="preserve">
+    <value>No se pudo generar planilla de pago de tipo {0} para rut {1} e isapre {2}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetDatosAfiliado" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetDatosEmpleadorByRutAfil" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetDatosEmpleadorByRutEmpl" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetDetalleCotizaciones" xml:space="preserve">
+    <value>No se pudo obtener informacion para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetDetalleDeuda" xml:space="preserve">
+    <value>No se pudo obtener información al obtener detalle deuda para rut {0} e isapre {1} revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_GetFoliosNegociacion" xml:space="preserve">
+    <value>No se pudo obtener información de folios de negociación para rut {0} e isapre {1} revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_PagoPlanilla" xml:space="preserve">
+    <value>No se pudo pagar planilla con folio {0} para rut {1}, isapre {2} y agencia {3}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_ReqSuperIntend" xml:space="preserve">
+    <value>No se pudo obtener información de documentos de cobro pendiente para isapre {0} y rut {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_ReqSuperIntendencia" xml:space="preserve">
+    <value>No se pudo obtener información de requerimientos de superintendencia para isapre {0} y rut {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_SaldoExcedentes" xml:space="preserve">
+    <value>No se pudo obtener informacion al obtener cuponera para rut {0}, isapre {1} y tipo {2} revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_SecuenciaDeuda" xml:space="preserve">
+    <value>No se pudo obtener informacion, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_SolicitudDevolucionExcesos" xml:space="preserve">
+    <value>No se pudo grabar el requerimiento de solicitud de excesos para rut {0} e isapre {1}, revise el archivo de log para obtener más información.</value>
+  </data>
+  <data name="Ex_SolicitudReemision" xml:space="preserve">
+    <value>No se pudo grabar la(s) solicitudud(es) de reemision, revise el archivo de log para obtener más información.</value>
+  </data>
+</root>

@@ -1,0 +1,38 @@
+﻿@using WebPagos.Models.DTO
+
+@model ListaModel
+
+<div class="container">
+
+    <center><h1>Consulta Deudas</h1></center>
+    <br>
+
+    <form id="FormConsultaDeudas" name="FormConsultaDeudas" method="POST" action='@Url.Action("Resultado", "Deuda")'>        
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label>Periodo Deuda</label>
+                @*@Html.DropDownListFor(m => m.estadoPago,
+                    new SelectList(Enum.GetValues(typeof(EstadoPago))),
+                    "Selecciona el estado de pago", new { @class = "form-control" })*@
+
+                @Html.DropDownListFor(model => model.CodPeriodo,
+               new SelectList(Model.LstPeriodos, "Value", "Text"), "Selecciona el periodo de la deuda",
+               new { @class="form-control", required = "required" })
+            </div>
+
+            <div class="form-group col-md-6">
+                <center>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg" id="btnConsultar" name="btnConsultar" value="Buscar">Buscar</button>
+                    <button type="reset" class="btn btn-success btn-lg" onclick="limpiarFormulario()" value="Limpiar">Limpiar</button>
+                </center>
+            </div>
+        </div>
+
+
+
+    </form>
+
+</div>

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IngresosProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IsaWebProdEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_PRC_SALDO_EXCESO" ReturnType="Collection(IngresosProdModel.DevolucionExcesoEntity)">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_SALDO" ReturnType="Collection(IngresosProdModel.DevolucionExcesosEntity)">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_DOCUMENTOS" ReturnType="Collection(IngresosProdModel.InventarioDocumentoEntity)">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_SP_FECHA_INVENTARIO">
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+      <Parameter Name="P_RETORNO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_SP_GENERA_SOLICITUD_EXCESO">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_FORMA_PAGO" Mode="In" Type="String" />
+      <Parameter Name="P_AGENCIA_DESTINO" Mode="In" Type="Decimal" />
+      <Parameter Name="P_CTACTE_NUMERO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_TIPO" Mode="In" Type="String" />
+      <Parameter Name="P_CTACTE_BANCO" Mode="In" Type="String" />
+      <Parameter Name="P_CANAL" Mode="In" Type="String" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_NUMERO_SOLICITUD" Mode="Out" Type="Decimal" />
+      <Parameter Name="P_TEXTO" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SP_OBTIENE_CUPON_PAGO" ReturnType="Collection(IngresosProdModel.CotizacionEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SP_OBTIENE_CARGO_NEW" ReturnType="Collection(IngresosProdModel.CargoNewEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SP_OBTIENE_PERIODO_PAGADO" ReturnType="Collection(IngresosProdModel.PeriodoEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_INSERT_DATOS_COTIZA_NEW">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_PRECAU" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_PREMUN" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_MPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_FREFER" Mode="In" Type="DateTime" />
+      <Parameter Name="PR_FCREACION" Mode="In" Type="DateTime" />
+      <Parameter Name="PR_XESTADO" Mode="In" Type="String" />
+      <Parameter Name="PR_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_REAJUSTE" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_INTERES" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_RECARGO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_TOTAL" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_FOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_WLPID" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SP_OBTIENE_DEUDA" ReturnType="Collection(IngresosProdModel.DetalleDeudaEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SECUENCIA_PAGODEUDA" ReturnType="Collection(IngresosProdModel.SecuenciaDeudaEntity)" />
+    <FunctionImport Name="PKG_COTIZACIONES_INSERT_PAGO_DEUDA">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NPERIODO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NMONTO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NSUBPRODUCTO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NDEUDA" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NREAJUSTE" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NINTERES" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRECARGO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NGASTOS" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NHONORARIO" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_SP_RETORNA_CUENTA_PRINCIPAL">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_NUMERO_CTA" Mode="Out" Type="String" />
+      <Parameter Name="P_TIPO_CTA" Mode="Out" Type="String" />
+      <Parameter Name="P_BANCO_CTA" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_CIRC_EXCESO_SALDO_PRC_AFILIADO_DEUDA">
+      <Parameter Name="P_AFIL_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="P_ISAPRE" Mode="In" Type="String" />
+      <Parameter Name="P_DEUDA" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_MIS_ANTECEDENTES_TRAERCARGAS" ReturnType="Collection(IngresosProdModel.CargasEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_MIS_ANTECEDENTES_TRAERCARGASLOG" ReturnType="Collection(IngresosProdModel.CargasLogEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_CARG_CCORR" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_MIS_ANTECEDENTES_DATOS_DEL_AFILIADO" ReturnType="Collection(IngresosProdModel.DatosAfiliadoEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_COTIZACIONES_SP_CART_EXCED" ReturnType="Collection(IngresosProdModel.DetalleExcedenteEntity)">
+      <Parameter Name="PRM_RUT_AFILIADO" Mode="In" Type="Decimal" />
+      <Parameter Name="PRM_ISAP_CEMPRESA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_ANTECEDENTES_DEL_EMPLEADOR_TRAEREMPLEADOR" ReturnType="Collection(IngresosProdModel.DatosEmpleadorEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DATOS_DEL_EMPLEADOR">
+      <Parameter Name="RUTEMP" Mode="In" Type="Decimal" />
+      <Parameter Name="ISAP" Mode="In" Type="String" />
+      <Parameter Name="SQL_EMPL_TAPELLIDO_PATERNO" Mode="Out" Type="String" />
+      <Parameter Name="SQL_EMPL_TAPELLIDO_MATERNO" Mode="Out" Type="String" />
+      <Parameter Name="SQL_EMPL_TNOMBRE_RAZON_SOCIAL" Mode="Out" Type="String" />
+      <Parameter Name="SQL_EMPL_NRUT" Mode="Out" Type="Decimal" />
+      <Parameter Name="SQL_EMPL_XDV" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CEPA_TCALLE" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CEPA_TNUMERO" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CEPA_TDEPTO" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CEPA_TBLOCK" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CEPA_TVILLA" Mode="Out" Type="String" />
+      <Parameter Name="SQL_COMUNA" Mode="Out" Type="String" />
+      <Parameter Name="SQL_CIUDAD" Mode="Out" Type="String" />
+      <Parameter Name="SQL_REGION" Mode="Out" Type="Decimal" />
+      <Parameter Name="SQL_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PGK_COMPRA_BONOS_SECUENCIA_WEBPAY" ReturnType="Collection(IngresosProdModel.SecuenciaCotizacionesEntity)" />
+    <FunctionImport Name="PKG_PAGOS_RECAUDACIONES_SP_ACTUALIZA_REGRECA">
+      <Parameter Name="PR_NFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STIPO" Mode="In" Type="String" />
+      <Parameter Name="PR_SFORMAPAGO" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_DETALLE">
+      <Parameter Name="PR_NFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STIPO" Mode="In" Type="String" />
+      <Parameter Name="PR_NDEUDA" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NGASTOCOB" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NHONORARIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NINTERES" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NPAGO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NREAJUSTE" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRECARGO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NPERIODORECAU" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NPERIODOREMUN" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NSUBPRODUCTO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_ENCABEZADO">
+      <Parameter Name="PR_NFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_SMAIL" Mode="In" Type="String" />
+      <Parameter Name="PR_NGASTOCOBTOT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NPAGOTOT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_STIPO" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_PAGOS_RECAUDACIONES_SP_OBTIENE_DETALLE_PAGO" ReturnType="Collection(IngresosProdModel.DetallePagoEntity)">
+      <Parameter Name="PR_NFOLIO" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_CEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_STIPO" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PKG_DETALLE_COTIZACIONES_DETCOTIZACIONES" ReturnType="Collection(IngresosProdModel.DetCotizacionesEntity)">
+      <Parameter Name="PR_NRUT" Mode="In" Type="Decimal" />
+      <Parameter Name="PR_SEMPRESA" Mode="In" Type="String" />
+      <Parameter Name="PR_SNOMAFIL" Mode="In" Type="String" />
+      <Parameter Name="PR_STEXT" Mode="Out" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DevolucionExcesoEntity">
+    <Property Type="Decimal" Name="TRAN_PREMUN" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO_EXCESO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DevolucionExcesosEntity">
+    <Property Type="Decimal" Name="PERIODO_REMUNERACION" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO_EXCESO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="InventarioDocumentoEntity">
+    <Property Type="Decimal" Name="FECHA_EMISION" Nullable="true" />
+    <Property Type="String" Name="TIPO_DOCUMENTO" Nullable="true" />
+    <Property Type="Decimal" Name="NUMERO_DOCUMENTO" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CotizacionEntity">
+    <Property Type="String" Name="PER_COTIZ_N" Nullable="true" />
+    <Property Type="String" Name="F_VENCIM_N" Nullable="true" />
+    <Property Type="String" Name="COTIZ_PACTADA_N" Nullable="true" />
+    <Property Type="String" Name="F_UF_N" Nullable="true" />
+    <Property Type="String" Name="CALLE" Nullable="true" />
+    <Property Type="String" Name="NUMERO" Nullable="true" />
+    <Property Type="String" Name="BLOCK" Nullable="true" />
+    <Property Type="String" Name="DEPTO" Nullable="true" />
+    <Property Type="String" Name="VILLA" Nullable="true" />
+    <Property Type="String" Name="AFIL_TNOMBRES" Nullable="true" />
+    <Property Type="String" Name="AFIL_TAPELLIDO_PATERNO" Nullable="true" />
+    <Property Type="String" Name="AFIL_TAPELLIDO_MATERNO" Nullable="true" />
+    <Property Type="String" Name="AFIL_NRUT" Nullable="true" />
+    <Property Type="String" Name="CIUDAD" Nullable="true" />
+    <Property Type="String" Name="COMUNA" Nullable="true" />
+    <Property Type="String" Name="PLSA_CCD" Nullable="true" />
+    <Property Type="String" Name="SEC" Nullable="true" />
+    <Property Type="String" Name="TITR_CCOD" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CargoNewEntity">
+    <Property Type="Decimal" Name="PERIODO" Nullable="true" />
+    <Property Type="Decimal" Name="VALOR" Nullable="true" />
+    <Property Type="String" Name="UNIDAD" Nullable="true" />
+    <Property Type="Decimal" Name="VALOR_PESOS" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_REFERENCIA" Nullable="true" />
+    <Property Type="Decimal" Name="MONTO_GES" Nullable="true" />
+    <Property Type="Decimal" Name="REAJUSTE" Nullable="true" />
+    <Property Type="Decimal" Name="INTERES" Nullable="true" />
+    <Property Type="Decimal" Name="RECARGO" Nullable="true" />
+    <Property Type="Decimal" Name="VALOR_TOTAL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PeriodoEntity">
+    <Property Type="String" Name="PCOT_PREMUN" Nullable="true" />
+    <Property Type="String" Name="PCOT_FCREACION" Nullable="true" />
+    <Property Type="Decimal" Name="PCOT_MPAGO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DetalleDeudaEntity">
+    <Property Type="Decimal" Name="PERIODO" Nullable="false" />
+    <Property Type="Decimal" Name="SPRODUCTO" Nullable="false" />
+    <Property Type="String" Name="GLOSA_SPRODUCTO" Nullable="true" />
+    <Property Type="Decimal" Name="DEUDA" Nullable="true" />
+    <Property Type="Decimal" Name="REAJUSTE" Nullable="true" />
+    <Property Type="Decimal" Name="INTERES" Nullable="true" />
+    <Property Type="Decimal" Name="RECARGO" Nullable="true" />
+    <Property Type="Decimal" Name="GASTOS" Nullable="true" />
+    <Property Type="Decimal" Name="SUBPRODUCTO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SecuenciaDeudaEntity">
+    <Property Type="Decimal" Name="SEQ_PAGODEUDA" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CargasEntity">
+    <Property Type="String" Name="CARG_TNOMBRES" Nullable="true" />
+    <Property Type="String" Name="CARG_TAPELLIDO_PATERNO" Nullable="true" />
+    <Property Type="String" Name="CARG_TAPELLIDO_MATERNO" Nullable="true" />
+    <Property Type="Decimal" Name="CARG_CCORR" Nullable="false" />
+    <Property Type="Decimal" Name="CARG_NRUT" Nullable="true" />
+    <Property Type="String" Name="CARG_XDV" Nullable="true" />
+    <Property Type="String" Name="CARG_FNACIMIENTO" Nullable="true" />
+    <Property Type="String" Name="CARG_XSEXO" Nullable="true" />
+    <Property Type="String" Name="PARENTESCO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CargasLogEntity">
+    <Property Type="Decimal" Name="CARG_CCORR" Nullable="false" />
+    <Property Type="String" Name="CARG_TNOMBRES" Nullable="true" />
+    <Property Type="String" Name="CARG_TAPELLIDO_PATERNO" Nullable="true" />
+    <Property Type="String" Name="CARG_TAPELLIDO_MATERNO" Nullable="true" />
+    <Property Type="Decimal" Name="CARG_NRUT" Nullable="true" />
+    <Property Type="String" Name="CARG_XDV" Nullable="true" />
+    <Property Type="String" Name="CARG_FNACIMIENTO" Nullable="true" />
+    <Property Type="String" Name="CARG_XSEXO" Nullable="true" />
+    <Property Type="String" Name="PARENTESCO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DatosAfiliadoEntity">
+    <Property Type="String" Name="TNOMBRES" Nullable="true" />
+    <Property Type="String" Name="AFIL_TCALLE" Nullable="true" />
+    <Property Type="String" Name="AFIL_TNUMERO" Nullable="true" />
+    <Property Type="String" Name="AFIL_TDEPTO" Nullable="true" />
+    <Property Type="String" Name="AFIL_TBLOCK" Nullable="true" />
+    <Property Type="String" Name="AFIL_TVILLA" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_TFONO1" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_NRUT" Nullable="false" />
+    <Property Type="String" Name="AFIL_XDV" Nullable="false" />
+    <Property Type="String" Name="AFIL_FNACIMIENTO" Nullable="true" />
+    <Property Type="String" Name="LOCA_TNOMBRE_COMUNA" Nullable="true" />
+    <Property Type="String" Name="LOCA_TNOMBRE_CIUDAD" Nullable="true" />
+    <Property Type="String" Name="PLSA_CCOD" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_MCOTIZACION_TOTAL" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_XSEXO" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_XESTADO_CIVIL" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_TFONO2" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_TFONO_CELULAR" Nullable="true" />
+    <Property Type="String" Name="AFIL_TEMAIL" Nullable="true" />
+    <Property Type="Decimal" Name="LOCA_CREGION" Nullable="true" />
+    <Property Type="String" Name="AFIL_FINGRESO_ISAPRE" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_LNUM_CONTRATO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetalleExcedenteEntity">
+    <Property Type="String" Name="CAEX_PREMUN" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MEXCEDENTE" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MREAJUSTE" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MINTERES" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MCOMISION" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MSALDO" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MDISPONIBLE" Nullable="true" />
+    <Property Type="Decimal" Name="CAEX_MUSO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DatosEmpleadorEntity">
+    <Property Type="Decimal" Name="RUT_EMPL" Nullable="false" />
+    <Property Type="String" Name="EMPL_TNOMBRE_RAZON_SOCIAL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SecuenciaCotizacionesEntity">
+    <Property Type="Decimal" Name="SEQ_WEBPAY" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetallePagoEntity">
+    <Property Type="String" Name="NOMBRE" Nullable="true" />
+    <Property Type="Decimal" Name="AFIL_NRUT" Nullable="false" />
+    <Property Type="String" Name="ISAP_CEMPRESA" Nullable="false" />
+    <Property Type="Decimal" Name="FOLIO_PAGO" Nullable="false" />
+    <Property Type="String" Name="TIPO" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA_PAGO" Nullable="true" />
+    <Property Type="String" Name="FORMA_PAGO" Nullable="true" />
+    <Property Type="String" Name="MAIL" Nullable="true" />
+    <Property Type="Decimal" Name="MGASTOCOB_TOTAL" Nullable="true" />
+    <Property Type="Decimal" Name="MPAGO_TOTAL" Nullable="false" />
+    <Property Type="Decimal" Name="MDEUDA" Nullable="true" />
+    <Property Type="Decimal" Name="MGASTOCOB" Nullable="true" />
+    <Property Type="Decimal" Name="MHONORARIO" Nullable="true" />
+    <Property Type="Decimal" Name="MINTERES" Nullable="true" />
+    <Property Type="Decimal" Name="MPAGO" Nullable="false" />
+    <Property Type="Decimal" Name="MREAJUSTE" Nullable="true" />
+    <Property Type="Decimal" Name="MRECARGO" Nullable="true" />
+    <Property Type="Decimal" Name="PERIODO_RECAU" Nullable="true" />
+    <Property Type="Decimal" Name="PERIODO_REMUN" Nullable="true" />
+    <Property Type="Decimal" Name="SUBPRODUCTO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetCotizacionesEntity">
+    <Property Type="Decimal" Name="ENPA_RUT" Nullable="true" />
+    <Property Type="String" Name="EMPL_TNOMBRE_RAZON_SOCIAL" Nullable="true" />
+    <Property Type="String" Name="ABON_PEREM" Nullable="true" />
+    <Property Type="String" Name="ABON_FECPAG" Nullable="true" />
+    <Property Type="Decimal" Name="ABON_VALOR" Nullable="true" />
+  </ComplexType>
+</Schema>

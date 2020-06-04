@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IngresosContModelStoreContainer" CdmEntityContainer="IsaWebContEntities">
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_DOCUMENTOS_PENDIENTES" FunctionName="IngresosContModel.Store.PKG_CIRC_EXCESO_DOCUMENTOS_PRC_DOCUMENTOS_PENDIENTES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosContModel.DocumentoEntity">
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="SOCIEDAD" ColumnName="SOCIEDAD" />
+          <ScalarProperty Name="ID_MAESTRO" ColumnName="ID_MAESTRO" />
+          <ScalarProperty Name="CUENTA" ColumnName="CUENTA" />
+          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+          <ScalarProperty Name="FECHA_DOC" ColumnName="FECHA_DOC" />
+          <ScalarProperty Name="CLASE_DOC" ColumnName="CLASE_DOC" />
+          <ScalarProperty Name="DOC_PAGO" ColumnName="DOC_PAGO" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="MOTIVO_GIRO" ColumnName="MOTIVO_GIRO" />
+          <ScalarProperty Name="POSICION" ColumnName="POSICION" />
+          <ScalarProperty Name="GLOSA_TIPO_DOCUMENTO" ColumnName="GLOSA_TIPO_DOCUMENTO" />
+          <ScalarProperty Name="GLOSA_ESTADO" ColumnName="GLOSA_ESTADO" />
+          <ScalarProperty Name="FORMA_REVALIDACION" ColumnName="FORMA_REVALIDACION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOS" FunctionName="IngresosContModel.Store.PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOS" />
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOSSAP" FunctionName="IngresosContModel.Store.PKG_CIRC_EXCESO_DOCUMENTOS_PRC_ACTIVAR_DOCUMENTOSSAP" />
+    <FunctionImportMapping FunctionImportName="SP_HISTORICO_PAGOS_PUBLICO" FunctionName="IngresosContModel.Store.SP_HISTORICO_PAGOS_PUBLICO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosContModel.ReqSuperIntendEntity">
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="ISAP_CEMPRESA" ColumnName="ISAP_CEMPRESA" />
+          <ScalarProperty Name="FECHA_EMISION" ColumnName="FECHA_EMISION" />
+          <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="FORMA_PAGO" ColumnName="FORMA_PAGO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PROC_REVALIDACION" ColumnName="PROC_REVALIDACION" />
+          <ScalarProperty Name="FECHA_EMISION_ORDER" ColumnName="FECHA_EMISION_ORDER" />
+          <ScalarProperty Name="CHEDA_ESTADO" ColumnName="CHEDA_ESTADO" />
+          <ScalarProperty Name="PAGE_ESCALAFON" ColumnName="PAGE_ESCALAFON" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

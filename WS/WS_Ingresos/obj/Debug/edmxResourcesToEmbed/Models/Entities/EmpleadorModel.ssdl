@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmpleadorModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_CERTIFICADO_COTIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="EMPLEADORWEB" StoreFunctionName="PKG_EMPLEADORES_CERTIFICADOS.PRC_CERTIFICADO_COTIZA">
+    <Parameter Name="PR_EMPL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="OUT_MENSAJEERROR" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADO_COTIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="EMPLEADORWEB" StoreFunctionName="PKG_EMPLEADORES_CERTIFICADOS.PRC_OBTIENE_AFILIADO_COTIZA">
+    <Parameter Name="PR_EMPL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_AFIL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="OUT_MENSAJEERROR" Type="varchar2" Mode="Out" />
+  </Function>
+  <Function Name="PKG_EMPLEADORES_CERTIFICADOS_PRC_OBTIENE_AFILIADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="EMPLEADORWEB" StoreFunctionName="PKG_EMPLEADORES_CERTIFICADOS.PRC_OBTIENE_AFILIADOS">
+    <Parameter Name="PR_EMPL_NRUT" Type="number" Mode="In" />
+    <Parameter Name="PR_ISAP_CEMPRESA" Type="varchar2" Mode="In" />
+    <Parameter Name="OUT_MENSAJEERROR" Type="varchar2" Mode="Out" />
+  </Function>
+  <EntityContainer Name="EmpleadorModelStoreContainer" />
+</Schema>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BuscarPagoModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PPAGOSWEB" StoreFunctionName="PKG_CONSULTAS_WEB.BUSCAR_PAGO_RUT">
+          <Parameter Name="RUTPAGO" Type="number" Mode="In" />
+          <Parameter Name="EXCEPT_TEXT" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PPAGOSWEB" StoreFunctionName="PKG_CONSULTAS_WEB.BUSCAR_PAGO_TEST">
+          <Parameter Name="IDFOLIO" Type="number" Mode="In" />
+          <Parameter Name="RUT" Type="number" Mode="In" />
+          <Parameter Name="MONTO" Type="number" Mode="In" />
+          <Parameter Name="ESTADO" Type="number" Mode="In" />
+          <Parameter Name="FECHADESDE" Type="varchar2" Mode="In" />
+          <Parameter Name="FECHAHASTA" Type="varchar2" Mode="In" />
+          <Parameter Name="TIPO_PAGO" Type="varchar2" Mode="In" />
+          <Parameter Name="MEDIO_PAGO" Type="number" Mode="In" />
+          <Parameter Name="ISAPRE" Type="number" Mode="In" />
+          <Parameter Name="EXCEPT_TEXT" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="PKG_CONSULTAS_WEB_DETALLES_DEUDAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PPAGOSWEB" StoreFunctionName="PKG_CONSULTAS_WEB.DETALLES_DEUDAS">
+          <Parameter Name="PERIODO" Type="number" Mode="In" />
+          <Parameter Name="EXCEPT_TEXT" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="PKG_CONSULTAS_WEB_LLENARLISTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PPAGOSWEB" StoreFunctionName="PKG_CONSULTAS_WEB.LLENARLISTAS">
+          <Parameter Name="ACCION" Type="varchar2" Mode="In" />
+          <Parameter Name="EXCEPT_TEXT" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PPAGOSWEB" StoreFunctionName="PKG_CONSULTAS_WEB.REGULARIZAR_PAGO_TEST">
+          <Parameter Name="RUT" Type="number" Mode="In" />
+          <Parameter Name="I_WTP_ID" Type="number" Mode="In" />
+          <Parameter Name="EXCEPT_TEXT" Type="varchar2" Mode="Out" />
+        </Function>
+        <EntityContainer Name="BuscarPagoModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BuscarPagoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PagosWebEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" ReturnType="Collection(BuscarPagoModel.PagoWebEntity)">
+            <Parameter Name="IDFOLIO" Mode="In" Type="Decimal" />
+            <Parameter Name="RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="MONTO" Mode="In" Type="Decimal" />
+            <Parameter Name="ESTADO" Mode="In" Type="Decimal" />
+            <Parameter Name="FECHADESDE" Mode="In" Type="String" />
+            <Parameter Name="FECHAHASTA" Mode="In" Type="String" />
+            <Parameter Name="TIPO_PAGO" Mode="In" Type="String" />
+            <Parameter Name="MEDIO_PAGO" Mode="In" Type="Decimal" />
+            <Parameter Name="ISAPRE" Mode="In" Type="Decimal" />
+            <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT" ReturnType="Collection(BuscarPagoModel.PagoRutEntity)">
+            <Parameter Name="RUTPAGO" Mode="In" Type="Decimal" />
+            <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST">
+            <Parameter Name="RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="I_WTP_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_CONSULTAS_WEB_LLENARLISTAS" ReturnType="Collection(BuscarPagoModel.LlenarListaWebEntity)">
+            <Parameter Name="ACCION" Mode="In" Type="String" />
+            <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PKG_CONSULTAS_WEB_DETALLES_DEUDAS" ReturnType="Collection(BuscarPagoModel.DetalleDeudasEntity)">
+            <Parameter Name="PERIODO" Mode="In" Type="Decimal" />
+            <Parameter Name="EXCEPT_TEXT" Mode="Out" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="PagoWebEntity">
+          <Property Type="Decimal" Name="FOLIO" Nullable="true" />
+          <Property Type="Decimal" Name="RUT" Nullable="true" />
+          <Property Type="Decimal" Name="MONTO" Nullable="true" />
+          <Property Type="Decimal" Name="ESTADO" Nullable="true" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" />
+          <Property Type="String" Name="TIPOPAGO" Nullable="true" />
+          <Property Type="Decimal" Name="MEDIOPAGO" Nullable="true" />
+          <Property Type="Decimal" Name="ISAPRE" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PagoRutEntity">
+          <Property Type="Decimal" Name="FOLIO" Nullable="true" />
+          <Property Type="Decimal" Name="RUT" Nullable="true" />
+          <Property Type="Decimal" Name="MONTO" Nullable="true" />
+          <Property Type="Decimal" Name="ESTADO" Nullable="true" />
+          <Property Type="DateTime" Name="FECHA" Nullable="true" />
+          <Property Type="String" Name="TIPOPAGO" Nullable="true" />
+          <Property Type="Decimal" Name="MEDIOPAGO" Nullable="true" />
+          <Property Type="Decimal" Name="ISAPRE" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="LlenarListaWebEntity">
+          <Property Type="String" Name="CODIGO" Nullable="true" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="DetalleDeudasEntity">
+          <Property Type="Decimal" Name="FOLIOPAGO" Nullable="true" />
+          <Property Type="Decimal" Name="REMUN" Nullable="true" />
+          <Property Type="Decimal" Name="SUBPRODUCTO" Nullable="true" />
+          <Property Type="Decimal" Name="DEUDA" Nullable="true" />
+          <Property Type="Decimal" Name="REAJUSTE" Nullable="true" />
+          <Property Type="Decimal" Name="INTERESES" Nullable="true" />
+          <Property Type="Decimal" Name="RECARGO" Nullable="true" />
+          <Property Type="Decimal" Name="HONORARIOS" Nullable="true" />
+          <Property Type="Decimal" Name="PAGOTOTAL" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BuscarPagoModelStoreContainer" CdmEntityContainer="PagosWebEntities" >
+          <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_BUSCAR_PAGO_TEST">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BuscarPagoModel.PagoWebEntity">
+                <ScalarProperty Name="FOLIO" ColumnName="FOLIO" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+                <ScalarProperty Name="MEDIOPAGO" ColumnName="MEDIOPAGO" />
+                <ScalarProperty Name="ISAPRE" ColumnName="ISAPRE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_BUSCAR_PAGO_RUT">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BuscarPagoModel.PagoRutEntity">
+                <ScalarProperty Name="FOLIO" ColumnName="FOLIO" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+                <ScalarProperty Name="MEDIOPAGO" ColumnName="MEDIOPAGO" />
+                <ScalarProperty Name="ISAPRE" ColumnName="ISAPRE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_REGULARIZAR_PAGO_TEST" />
+          <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_LLENARLISTAS" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_LLENARLISTAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BuscarPagoModel.LlenarListaWebEntity">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PKG_CONSULTAS_WEB_DETALLES_DEUDAS" FunctionName="BuscarPagoModel.Store.PKG_CONSULTAS_WEB_DETALLES_DEUDAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BuscarPagoModel.DetalleDeudasEntity">
+                <ScalarProperty Name="FOLIOPAGO" ColumnName="FOLIOPAGO" />
+                <ScalarProperty Name="REMUN" ColumnName="REMUN" />
+                <ScalarProperty Name="SUBPRODUCTO" ColumnName="SUBPRODUCTO" />
+                <ScalarProperty Name="DEUDA" ColumnName="DEUDA" />
+                <ScalarProperty Name="REAJUSTE" ColumnName="REAJUSTE" />
+                <ScalarProperty Name="INTERESES" ColumnName="INTERESES" />
+                <ScalarProperty Name="RECARGO" ColumnName="RECARGO" />
+                <ScalarProperty Name="HONORARIOS" ColumnName="HONORARIOS" />
+                <ScalarProperty Name="PAGOTOTAL" ColumnName="PAGOTOTAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

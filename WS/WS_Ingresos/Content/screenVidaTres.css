@@ -1,0 +1,711 @@
+﻿
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); 
+
+body { background-color: #fff;     font-family: "Montserrat", Helvetica, Arial, sans-serif !important;    /*color: #3c4a60;*/ }
+
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+    font-size: 11px;
+    color: #4d5d73;
+    margin: 0;
+    padding: 0;
+}
+
+p, ul, li, img, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+img {
+    border: 0;
+}
+
+/************** LAYOUT **************/
+#wrap {
+    width: 992px;
+    margin: 0 auto;
+}
+
+#content {
+    width: 959px;
+    padding: 25px 0 60px 25px;
+    clear: both;
+}
+
+#left-contenthome {
+    width: 504px;
+    float: left;
+    margin: 0 19px 0 0;
+}
+
+#right-contenthome {
+    width: 436px;
+    float: left;
+    padding: 30px 0 0 0;
+}
+
+
+/****** HEADER ******/
+
+#header {
+    border-bottom: 1px solid #dad9d9;
+}
+
+    #header #top {
+        color: #e0e6ed;
+        font-size: 11px; /*background:#9b9b9b;*/
+        text-align: right;
+        height: 24px;
+    }
+
+        #header #top a {
+            color: #444e5a;
+        }
+
+        #header #top input {
+            vertical-align: middle;
+        }       
+
+        #header #top .form_buscar {
+            float: right;
+            padding: 2px 8px 0 12px;
+        }
+
+        #header #top .enlaces {
+            float: right;
+            padding: 4px 0 0 0;
+        }   
+
+        #header h1 a span {
+            display: none;
+        }   
+
+#banner_home {
+    margin: 0 0 26px 0;
+}
+
+/******* MIGA DE PAN ********/
+.miga-pan {
+    font-size: 10px;
+    color: #4d5d73;
+    padding: 4px 0;
+    border-bottom: 1px solid #e2e7ec;
+}
+
+    .miga-pan a {
+        color: #4d5d73;
+    }
+/**** OPCIONES PAGINA ****/
+.opciones-pagina {
+    font-size: 10px;
+    font-weight: bold;
+    float: right;
+    margin: 0 0 15px 0;
+}
+
+    .opciones-pagina a {
+        color: #4d5d73;
+    }
+
+/******* COLUMNA IZQUIERDA ********/
+.left-column {
+    width: 206px;
+    float: left;
+    margin: 0 28px 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+select.acceso {
+    width: 185px;
+    border: 1px solid #606F83;
+    padding: 2px;
+    font-size: 11px;
+    color: #000;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+/*datos tabla*/
+.datos_tabla{
+    width: 100%;
+}
+
+.datos_tabla td, .datos_tabla th {
+    padding: 7px 14px;
+}
+
+.datos_tabla .primero {
+    border-left: 1px solid #e8e8e8;
+}
+
+.datos_tabla .centrado{
+    text-align:center;
+}
+
+.datos_tabla .primero_arriba {
+    border-top: 1px solid #e8e8e8;
+}
+
+.datos_tabla td {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.datos_tabla th {
+    background: #f5f5f5;
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #e8e8e8;
+}
+
+.datos_tabla .sobre_prestaciones {
+    background: none;
+    border-top: none;
+    border-left: none;
+}
+
+.datos_tablachico td, .datos_tablachico th {
+    padding: 7px 6px;
+}
+
+.datos_tabla a {
+        color: #3c4a60;
+}
+
+.black {
+    color: #000;
+}
+
+.red {
+    color: #e20a16;
+}
+
+.txt_10 {
+    font-size: 10px;
+}
+
+.txt_11 {
+    font-size: 11px;
+}
+
+.txt_12 {
+    font-size: 12px;
+}
+
+.txt_13 {
+    font-size: 13px;
+}
+
+.spacer {
+    clear: both;
+}
+
+.centrado {
+    text-align: center;
+}
+
+    .centrado a {
+        color: #6B9985;
+    }
+
+.rojo {
+    color: #f11227;
+}
+
+.txt_folio {
+    margin: 90px 0 0 330px;
+    width: 190px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_nombre {
+    margin: 136px 0 0 72px;
+    width: 244px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_rut {
+    margin: 146px 0 0 330px;
+    width: 190px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_plan {
+    margin: 202px 0 0 72px;
+    width: 80px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_montopactado {
+    margin: 202px 0 0 170px;
+    width: 150px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_fechavencimiento {
+    margin: 202px 0 0 330px;
+    width: 190px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_periodocotizacion {
+    margin: 258px 0 0 72px;
+    width: 215px;
+    padding: 0;
+    text-align: center;
+}
+
+.txt_declarado {
+    width: 116px;
+    margin: 300px 0 0 156px;
+    text-align: center;
+}
+
+.txt_reajustes {
+    width: 116px;
+    margin: 333px 0 0 156px;
+    text-align: center;
+}
+
+.txt_intereses {
+    width: 116px;
+    margin: 366px 0 0 156px;
+    text-align: center;
+}
+
+.txt_recargos {
+    width: 116px;
+    margin: 399px 0 0 156px;
+    text-align: center;
+}
+
+.txt_totalapagar {
+    width: 116px;
+    margin: 460px 0 0 156px;
+    text-align: center;
+}
+
+.img_timbreisapre {
+    margin: 294px 0 0 372px;
+}
+
+.img_timbrecajero {
+    margin: 451px 0 0 372px;
+}
+
+.txt_valorUF {
+    font-size: 11px;
+    color: #010101;
+    margin: 50px 0 0 884px;
+}
+
+.tipo_independiente {
+    width: 16px;
+    text-align: center;
+    margin: 78px 0 0 930px;
+}
+
+.tipo_voluntario {
+    width: 16px;
+    text-align: center;
+    margin: 78px 0 0 1112px;
+}
+
+.txt_folio_isapre {
+    width: 166px;
+    margin: 95px 0 0 1188px;
+    text-align: center;
+}
+
+.txt_nombre_isapre {
+    width: 586px;
+    margin: 146px 0 0 588px;
+}
+
+.txt_nombredos_isapre {
+    width: 764px;
+    margin: 196px 0 0 588px;
+}
+
+.txt_rut_isapre {
+    width: 165px;
+    margin: 146px 0 0 1188px;
+    text-align: center;
+}
+
+.txt_periodocotizacion_isapre {
+    width: 152px;
+    margin: 260px 0 0 580px;
+    text-align: center;
+}
+
+.txt_rentadeclarada_isapre {
+    width: 128px;
+    margin: 260px 0 0 752px;
+    text-align: center;
+}
+
+.txt_min7salud_isapre {
+    width: 142px;
+    margin: 260px 0 0 890px;
+    text-align: center;
+}
+
+.txt_cotizacionpactada_isapre {
+    width: 135px;
+    margin: 260px 0 0 1042px;
+    text-align: center;
+}
+
+.txt_fechadepago_isapre {
+    width: 164px;
+    margin: 260px 0 0 1188px;
+    text-align: center;
+    text-align: center;
+}
+
+.txt_totaldeclarado_isapre {
+    width: 116px;
+    margin: 324px 0 0 715px;
+    text-align: center;
+}
+
+.txt_reajustes_isapre {
+    width: 116px;
+    margin: 358px 0 0 715px;
+    text-align: center;
+}
+
+.txt_intereses_isapre {
+    width: 116px;
+    margin: 392px 0 0 715px;
+    text-align: center;
+}
+
+.txt_recargos_isapre {
+    width: 116px;
+    margin: 426px 0 0 715px;
+    text-align: center;
+}
+
+.txt_totalapagar_isapre {
+    width: 116px;
+    margin: 483px 0 0 715px;
+    text-align: center;
+}
+
+.txt_efectivo_isapre {
+    width: 116px;
+    text-align: center;
+    margin: 300px 0 0 1018px;
+}
+
+.txt_chequenro_isapre {
+    width: 116px;
+    text-align: center;
+    margin: 335px 0 0 1018px;
+}
+
+.txt_banco_isapre {
+    width: 116px;
+    text-align: center;
+    margin: 370px 0 0 1018px;
+}
+
+.txt_plaza_isapre {
+    width: 116px;
+    text-align: center;
+    margin: 405px 0 0 1018px;
+}
+
+.txt_normal_isapre {
+    width: 16px;
+    text-align: center;
+    margin: 300px 0 0 1296px;
+}
+
+.txt_atrasada_isapre {
+    width: 16px;
+    text-align: center;
+    margin: 335px 0 0 1296px;
+}
+
+.txt_adelantada_isapre {
+    width: 16px;
+    text-align: center;
+    margin: 370px 0 0 1296px;
+}
+
+.img_timbreisapre_isapre {
+    margin: 451px 0 0 977px;
+}
+
+.img_timbrecajero_isapre {
+    margin: 438px 0 0 1230px;
+}
+
+.letralabel {
+    font-size: 11px;
+}
+
+.cuadrotextoedit {
+    color: #4d5d73;
+    font-size: 11px;
+    border: 1px solid #dcdcdc;
+}
+
+select.acceso {
+    width: 185px;
+    border: 1px solid #606F83;
+    padding: 2px;
+    font-size: 11px;
+    color: #000;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.switchcontent {
+    padding: 8px 0 12px 0;
+}
+
+.leftcolumn {
+    width: 196px;
+    float: left;
+    margin: 0 12px 0 12px;
+}
+
+.divTotal {
+    border-style: none solid solid solid;
+    border-width: 1px;
+    border-color: #e8e8e8;
+}
+
+.titulo {
+    color: #3b4d72;
+    letter-spacing: 1pt;
+}
+
+/******* COLUMNA DERECHA para Impresion ********/
+.right-columnImprimir {
+    line-height: 1.4em;
+    font-size: 12px;
+    width: 660px;
+    float: left;
+    font-size: 12px;
+    padding: 10px 32px 0 32px;
+    margin: 0 0 15px 0;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    text-align: justify;
+    color: #4D5D73;
+}
+
+    .right-columnImprimir h1 {
+        color: #242b35;
+        font-size: 13px;
+        padding: 0 0 0 18px;
+        color: #3b4d72;
+         letter-spacing: 1pt;
+    }
+
+    .right-columnImprimir .ico_datos {
+        background: url(../Content/images/ico_datospersonales.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_datosempleador {
+        background: url(../Content/images/ico_datosempleador.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_licencias {
+        background: url(../Content/images/ico_licencias.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_cargas {
+        background: url(../Content/images/ico_cargas.gif) no-repeat left top;
+        padding: 0 0 0 29px;
+    }
+
+    .right-columnImprimir .ico_plan {
+        background: url(../Content/images/ico_plan.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_reembolso {
+        background: url(../Content/images/ico_reembolso.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_cambioclave {
+        background: url(../Content/images/ico_cambioclave.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_consultas {
+        background: url(../Content/images/ico_consultas.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_buscador {
+        background: url(../Content/images/ico_buscador.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_examenes {
+        background: url(../Content/images/ico_examenes.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_certificado {
+        background: url(../Content/images/ico_certificado.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_credencial {
+        background: url(../Content/images/ico_credencial.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .ico_pesos {
+        background: url(../Content/images/ico_pesos.gif) no-repeat left top;
+    }
+
+    .right-columnImprimir .separador {
+        border-bottom: 1px solid #ebebeb;
+        margin: 0 0 10px 0;
+        padding: 10px 0 0 0;
+    }
+
+    .right-columnImprimir td {
+        font-size: 11px;
+        padding: 0 0 6px 0;
+    }
+
+    .right-columnImprimir .cuadrotexto {
+        color: #4d5d73;
+        font-size: 11px;
+        padding: 3px 8px;
+        border: 1px solid #dcdcdc;
+    }
+
+    .right-columnImprimir .fecha {
+        width: 20px;
+    }
+
+    .right-columnImprimir .selectbox {
+        width: 150px;
+    }
+
+/*datos tabla*/
+.datos_tablaImprimir td, .datos_tablaImprimir th {
+    padding: 7px 14px;
+}
+
+.datos_tablaImprimir .primero {
+    border-left: 1px solid #e8e8e8;
+}
+
+.datos_tablaImprimir .primero_arriba {
+    border-top: 1px solid #e8e8e8;
+}
+
+.datos_tablaImprimir td {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.datos_tablaImprimir th {
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #e8e8e8;
+}
+
+.datos_tablaImprimir .sobre_prestaciones {
+    background: none;
+    border-top: none;
+    border-left: none;
+}
+
+.datos_tablachico td, .datos_tablachico th {
+    padding: 7px 6px;
+}
+
+.datos_tablaImprimir a {
+    color: #0073ba;
+}
+
+.columnaEspecial {
+    border-color: #FFFFFF;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+
+
+.right-columnContacto { /*background: url(../images/bg_right-content.gif) no-repeat 45px bottom;*/
+    border: 1px solid #f1f4f5;
+    margin: 0 0 15px 0;
+}
+
+.right-columnCartilla {
+    width: 660px;
+    font-size: 11px;
+    padding: 10px 32px 0 32px; /*background: url(../images/bg_right-content.gif) no-repeat left bottom;*/
+    border: 1px solid #f1f4f5;
+    margin: 0 0 15px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .right-columnCartilla h1 {
+        color: #242b35;
+        font-size: 13px;
+        padding: 0 0 0 18px;
+    }
+
+    .right-columnCartilla .ico_plan {
+        background: url(../Content/images/ico_plan.gif) no-repeat left top;
+    }
+
+    .right-columnCartilla .separador {
+        border-bottom: 1px solid #ebebeb;
+        margin: 0 0 10px 0;
+        padding: 10px 0 0 0;
+    }
+
+    .right-columnCartilla .ico_plan {
+        background: url(../Content/images/ico_plan.gif) no-repeat left top;
+    }
+
+.css_orden {
+    color: #6B9985;
+}
+
+.abajo {
+    text-align: inherit;
+    height: auto;
+    font-size: 12px;
+    padding: 17px 0;
+    border-top: 1px solid #777272;
+}
+
+.btn {
+    border: 1px solid #3c4a60;
+    background: #3c4a60 50% 50% repeat-x;
+    text-transform: uppercase;
+    color: #fff !important;
+    text-align: center;
+    display: inline-block;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.btn:hover {background-color:#1f2631; text-decoration:none;}
+
+    .btn span {
+        display: block;
+        line-height: normal;
+        padding: 9px 17px;
+    }

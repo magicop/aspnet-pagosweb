@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConsafilProdModelStoreContainer" CdmEntityContainer="ConsafilProdEntities">
+    <FunctionImportMapping FunctionImportName="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1" FunctionName="ConsafilProdModel.Store.PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ConsafilProdModel.CotizacionesSubsidioEntity">
+          <ScalarProperty Name="NOMAFIL" ColumnName="NOMAFIL" />
+          <ScalarProperty Name="LICENCIA" ColumnName="LICENCIA" />
+          <ScalarProperty Name="RUTAFIL" ColumnName="RUTAFIL" />
+          <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+          <ScalarProperty Name="CAFP" ColumnName="CAFP" />
+          <ScalarProperty Name="PACO_FINICIO" ColumnName="PACO_FINICIO" />
+          <ScalarProperty Name="PACO_FFINAL" ColumnName="PACO_FFINAL" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="SALUD" ColumnName="SALUD" />
+          <ScalarProperty Name="IMPONIBLE" ColumnName="IMPONIBLE" />
+          <ScalarProperty Name="TRABAJADOR" ColumnName="TRABAJADOR" />
+          <ScalarProperty Name="PREVISION" ColumnName="PREVISION" />
+          <ScalarProperty Name="NCAJAP" ColumnName="NCAJAP" />
+          <ScalarProperty Name="CCAJAP" ColumnName="CCAJAP" />
+          <ScalarProperty Name="MCESANTIA" ColumnName="MCESANTIA" />
+          <ScalarProperty Name="PACO_FINICIO_ORDEN" ColumnName="PACO_FINICIO_ORDEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2" FunctionName="ConsafilProdModel.Store.PKG_SUBSI_LICENCIAS_V2_SP_CERT_SUBSI_2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ConsafilProdModel.CotizacionesSubsidio2Entity">
+          <ScalarProperty Name="NOMAFIL" ColumnName="NOMAFIL" />
+          <ScalarProperty Name="LICENCIA" ColumnName="LICENCIA" />
+          <ScalarProperty Name="RUTAFIL" ColumnName="RUTAFIL" />
+          <ScalarProperty Name="SUBS_FPAGO" ColumnName="SUBS_FPAGO" />
+          <ScalarProperty Name="SUBSIDIO" ColumnName="SUBSIDIO" />
+          <ScalarProperty Name="FINICIO" ColumnName="FINICIO" />
+          <ScalarProperty Name="FFINAL" ColumnName="FFINAL" />
+          <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+          <ScalarProperty Name="RENTA" ColumnName="RENTA" />
+          <ScalarProperty Name="CASU_MRENTA_PROMEDIO" ColumnName="CASU_MRENTA_PROMEDIO" />
+          <ScalarProperty Name="TRABAJADOR" ColumnName="TRABAJADOR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

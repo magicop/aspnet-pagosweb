@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IngresosProdModelStoreContainer" CdmEntityContainer="IsaWebProdEntities">
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_PRC_SALDO_EXCESO" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_PRC_SALDO_EXCESO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DevolucionExcesoEntity">
+          <ScalarProperty Name="TRAN_PREMUN" ColumnName="TRAN_PREMUN" />
+          <ScalarProperty Name="MONTO_EXCESO" ColumnName="MONTO_EXCESO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_SALDO" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_SALDO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DevolucionExcesosEntity">
+          <ScalarProperty Name="PERIODO_REMUNERACION" ColumnName="PERIODO_REMUNERACION" />
+          <ScalarProperty Name="MONTO_EXCESO" ColumnName="MONTO_EXCESO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_DOCUMENTOS" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_SP_INVENTARIO_DOCUMENTOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.InventarioDocumentoEntity">
+          <ScalarProperty Name="FECHA_EMISION" ColumnName="FECHA_EMISION" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_SP_FECHA_INVENTARIO" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_SP_FECHA_INVENTARIO" />
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_SP_GENERA_SOLICITUD_EXCESO" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_SP_GENERA_SOLICITUD_EXCESO" />
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SP_OBTIENE_CUPON_PAGO" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SP_OBTIENE_CUPON_PAGO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.CotizacionEntity">
+          <ScalarProperty Name="PER_COTIZ_N" ColumnName="PER_COTIZ_N" />
+          <ScalarProperty Name="F_VENCIM_N" ColumnName="F_VENCIM_N" />
+          <ScalarProperty Name="COTIZ_PACTADA_N" ColumnName="COTIZ_PACTADA_N" />
+          <ScalarProperty Name="F_UF_N" ColumnName="F_UF_N" />
+          <ScalarProperty Name="CALLE" ColumnName="CALLE" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="BLOCK" ColumnName="BLOCK" />
+          <ScalarProperty Name="DEPTO" ColumnName="DEPTO" />
+          <ScalarProperty Name="VILLA" ColumnName="VILLA" />
+          <ScalarProperty Name="AFIL_TNOMBRES" ColumnName="AFIL_TNOMBRES" />
+          <ScalarProperty Name="AFIL_TAPELLIDO_PATERNO" ColumnName="AFIL_TAPELLIDO_PATERNO" />
+          <ScalarProperty Name="AFIL_TAPELLIDO_MATERNO" ColumnName="AFIL_TAPELLIDO_MATERNO" />
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+          <ScalarProperty Name="PLSA_CCD" ColumnName="PLSA_CCD" />
+          <ScalarProperty Name="SEC" ColumnName="SEC" />
+          <ScalarProperty Name="TITR_CCOD" ColumnName="TITR_CCOD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SP_OBTIENE_CARGO_NEW" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SP_OBTIENE_CARGONEW">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.CargoNewEntity">
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+          <ScalarProperty Name="VALOR_PESOS" ColumnName="VALOR_PESOS" />
+          <ScalarProperty Name="FECHA_REFERENCIA" ColumnName="FECHA_REFERENCIA" />
+          <ScalarProperty Name="MONTO_GES" ColumnName="MONTO_GES" />
+          <ScalarProperty Name="REAJUSTE" ColumnName="REAJUSTE" />
+          <ScalarProperty Name="INTERES" ColumnName="INTERES" />
+          <ScalarProperty Name="RECARGO" ColumnName="RECARGO" />
+          <ScalarProperty Name="VALOR_TOTAL" ColumnName="VALOR_TOTAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SP_OBTIENE_PERIODO_PAGADO" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SP_OBTIENE_PERIODO_PAGADO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.PeriodoEntity">
+          <ScalarProperty Name="PCOT_PREMUN" ColumnName="PCOT_PREMUN" />
+          <ScalarProperty Name="PCOT_FCREACION" ColumnName="PCOT_FCREACION" />
+          <ScalarProperty Name="PCOT_MPAGO" ColumnName="PCOT_MPAGO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_INSERT_DATOS_COTIZA_NEW" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_INSERT_DATOS_COTIZA_NEW" />
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SP_OBTIENE_DEUDA" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SP_OBTIENE_DEUDA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DetalleDeudaEntity">
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="SPRODUCTO" ColumnName="SPRODUCTO" />
+          <ScalarProperty Name="GLOSA_SPRODUCTO" ColumnName="GLOSA_SPRODUCTO" />
+          <ScalarProperty Name="DEUDA" ColumnName="DEUDA" />
+          <ScalarProperty Name="REAJUSTE" ColumnName="REAJUSTE" />
+          <ScalarProperty Name="INTERES" ColumnName="INTERES" />
+          <ScalarProperty Name="RECARGO" ColumnName="RECARGO" />
+          <ScalarProperty Name="GASTOS" ColumnName="GASTOS" />
+          <ScalarProperty Name="SUBPRODUCTO" ColumnName="SUBPRODUCTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SECUENCIA_PAGODEUDA" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SECUENCIA_PAGODEUDA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.SecuenciaDeudaEntity">
+          <ScalarProperty Name="SEQ_PAGODEUDA" ColumnName="SEQ_PAGODEUDA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_INSERT_PAGO_DEUDA" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_INSERT_PAGO_DEUDA" />
+    <FunctionImportMapping FunctionImportName="PKG_CIRC_EXCESO_SALDO_SP_RETORNA_CUENTA_PRINCIPAL" FunctionName="IngresosProdModel.Store.PKG_CIRC_EXCESO_SALDO_SP_RETORNA_CUENTA_PRINCIPAL" />
+    <FunctionImportMapping FunctionImportName="PKG_MIS_ANTECEDENTES_TRAERCARGAS" FunctionName="IngresosProdModel.Store.PKG_MIS_ANTECEDENTES_TRAERCARGAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.CargasEntity">
+          <ScalarProperty Name="CARG_TNOMBRES" ColumnName="CARG_TNOMBRES" />
+          <ScalarProperty Name="CARG_TAPELLIDO_PATERNO" ColumnName="CARG_TAPELLIDO_PATERNO" />
+          <ScalarProperty Name="CARG_TAPELLIDO_MATERNO" ColumnName="CARG_TAPELLIDO_MATERNO" />
+          <ScalarProperty Name="CARG_CCORR" ColumnName="CARG_CCORR" />
+          <ScalarProperty Name="CARG_NRUT" ColumnName="CARG_NRUT" />
+          <ScalarProperty Name="CARG_XDV" ColumnName="CARG_XDV" />
+          <ScalarProperty Name="CARG_FNACIMIENTO" ColumnName="CARG_FNACIMIENTO" />
+          <ScalarProperty Name="CARG_XSEXO" ColumnName="CARG_XSEXO" />
+          <ScalarProperty Name="PARENTESCO" ColumnName="PARENTESCO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_MIS_ANTECEDENTES_TRAERCARGASLOG" FunctionName="IngresosProdModel.Store.PKG_MIS_ANTECEDENTES_TRAERCARGASLOG">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.CargasLogEntity">
+          <ScalarProperty Name="CARG_CCORR" ColumnName="CARG_CCORR" />
+          <ScalarProperty Name="CARG_TNOMBRES" ColumnName="CARG_TNOMBRES" />
+          <ScalarProperty Name="CARG_TAPELLIDO_PATERNO" ColumnName="CARG_TAPELLIDO_PATERNO" />
+          <ScalarProperty Name="CARG_TAPELLIDO_MATERNO" ColumnName="CARG_TAPELLIDO_MATERNO" />
+          <ScalarProperty Name="CARG_NRUT" ColumnName="CARG_NRUT" />
+          <ScalarProperty Name="CARG_XDV" ColumnName="CARG_XDV" />
+          <ScalarProperty Name="CARG_FNACIMIENTO" ColumnName="CARG_FNACIMIENTO" />
+          <ScalarProperty Name="CARG_XSEXO" ColumnName="CARG_XSEXO" />
+          <ScalarProperty Name="PARENTESCO" ColumnName="PARENTESCO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_MIS_ANTECEDENTES_DATOS_DEL_AFILIADO" FunctionName="IngresosProdModel.Store.PKG_MIS_ANTECEDENTES_DATOS_DEL_AFILIADO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DatosAfiliadoEntity">
+          <ScalarProperty Name="TNOMBRES" ColumnName="TNOMBRES" />
+          <ScalarProperty Name="AFIL_TCALLE" ColumnName="AFIL_TCALLE" />
+          <ScalarProperty Name="AFIL_TNUMERO" ColumnName="AFIL_TNUMERO" />
+          <ScalarProperty Name="AFIL_TDEPTO" ColumnName="AFIL_TDEPTO" />
+          <ScalarProperty Name="AFIL_TBLOCK" ColumnName="AFIL_TBLOCK" />
+          <ScalarProperty Name="AFIL_TVILLA" ColumnName="AFIL_TVILLA" />
+          <ScalarProperty Name="AFIL_TFONO1" ColumnName="AFIL_TFONO1" />
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="AFIL_XDV" ColumnName="AFIL_XDV" />
+          <ScalarProperty Name="AFIL_FNACIMIENTO" ColumnName="AFIL_FNACIMIENTO" />
+          <ScalarProperty Name="LOCA_TNOMBRE_COMUNA" ColumnName="LOCA_TNOMBRE_COMUNA" />
+          <ScalarProperty Name="LOCA_TNOMBRE_CIUDAD" ColumnName="LOCA_TNOMBRE_CIUDAD" />
+          <ScalarProperty Name="PLSA_CCOD" ColumnName="PLSA_CCOD" />
+          <ScalarProperty Name="AFIL_MCOTIZACION_TOTAL" ColumnName="AFIL_MCOTIZACION_TOTAL" />
+          <ScalarProperty Name="AFIL_XSEXO" ColumnName="AFIL_XSEXO" />
+          <ScalarProperty Name="AFIL_XESTADO_CIVIL" ColumnName="AFIL_XESTADO_CIVIL" />
+          <ScalarProperty Name="AFIL_TFONO2" ColumnName="AFIL_TFONO2" />
+          <ScalarProperty Name="AFIL_TFONO_CELULAR" ColumnName="AFIL_TFONO_CELULAR" />
+          <ScalarProperty Name="AFIL_TEMAIL" ColumnName="AFIL_TEMAIL" />
+          <ScalarProperty Name="LOCA_CREGION" ColumnName="LOCA_CREGION" />
+          <ScalarProperty Name="AFIL_FINGRESO_ISAPRE" ColumnName="AFIL_FINGRESO_ISAPRE" />
+          <ScalarProperty Name="AFIL_LNUM_CONTRATO" ColumnName="AFIL_LNUM_CONTRATO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_COTIZACIONES_SP_CART_EXCED" FunctionName="IngresosProdModel.Store.PKG_COTIZACIONES_SP_CART_EXCED">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DetalleExcedenteEntity">
+          <ScalarProperty Name="CAEX_PREMUN" ColumnName="CAEX_PREMUN" />
+          <ScalarProperty Name="CAEX_MEXCEDENTE" ColumnName="CAEX_MEXCEDENTE" />
+          <ScalarProperty Name="CAEX_MREAJUSTE" ColumnName="CAEX_MREAJUSTE" />
+          <ScalarProperty Name="CAEX_MINTERES" ColumnName="CAEX_MINTERES" />
+          <ScalarProperty Name="CAEX_MCOMISION" ColumnName="CAEX_MCOMISION" />
+          <ScalarProperty Name="CAEX_MSALDO" ColumnName="CAEX_MSALDO" />
+          <ScalarProperty Name="CAEX_MDISPONIBLE" ColumnName="CAEX_MDISPONIBLE" />
+          <ScalarProperty Name="CAEX_MUSO" ColumnName="CAEX_MUSO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_ANTECEDENTES_DEL_EMPLEADOR_TRAEREMPLEADOR" FunctionName="IngresosProdModel.Store.PKG_ANTECEDENTES_DEL_EMPLEADOR_TRAEREMPLEADOR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DatosEmpleadorEntity">
+          <ScalarProperty Name="RUT_EMPL" ColumnName="RUT_EMPL" />
+          <ScalarProperty Name="EMPL_TNOMBRE_RAZON_SOCIAL" ColumnName="EMPL_TNOMBRE_RAZON_SOCIAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DATOS_DEL_EMPLEADOR" FunctionName="IngresosProdModel.Store.DATOS_DEL_EMPLEADOR" />
+    <FunctionImportMapping FunctionImportName="PGK_COMPRA_BONOS_SECUENCIA_WEBPAY" FunctionName="IngresosProdModel.Store.PKG_COMPRA_BONOS_SECUENCIA_WEBPAY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.SecuenciaCotizacionesEntity">
+          <ScalarProperty Name="SEQ_WEBPAY" ColumnName="SEQ_WEBPAY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_PAGOS_RECAUDACIONES_SP_ACTUALIZA_REGRECA" FunctionName="IngresosProdModel.Store.PKG_PAGOS_RECAUDACIONES_SP_ACTUALIZA_REGRECA" />
+    <FunctionImportMapping FunctionImportName="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_DETALLE" FunctionName="IngresosProdModel.Store.PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_DETALLE" />
+    <FunctionImportMapping FunctionImportName="PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_ENCABEZADO" FunctionName="IngresosProdModel.Store.PKG_PAGOS_RECAUDACIONES_SP_INSERT_REGRECA_ENCABEZADO" />
+    <FunctionImportMapping FunctionImportName="PKG_PAGOS_RECAUDACIONES_SP_OBTIENE_DETALLE_PAGO" FunctionName="IngresosProdModel.Store.PKG_PAGOS_RECAUDACIONES_SP_OBTIENE_DETALLE_PAGO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DetallePagoEntity">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="AFIL_NRUT" ColumnName="AFIL_NRUT" />
+          <ScalarProperty Name="ISAP_CEMPRESA" ColumnName="ISAP_CEMPRESA" />
+          <ScalarProperty Name="FOLIO_PAGO" ColumnName="FOLIO_PAGO" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="FECHA_PAGO" ColumnName="FECHA_PAGO" />
+          <ScalarProperty Name="FORMA_PAGO" ColumnName="FORMA_PAGO" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+          <ScalarProperty Name="MGASTOCOB_TOTAL" ColumnName="MGASTOCOB_TOTAL" />
+          <ScalarProperty Name="MPAGO_TOTAL" ColumnName="MPAGO_TOTAL" />
+          <ScalarProperty Name="MDEUDA" ColumnName="MDEUDA" />
+          <ScalarProperty Name="MGASTOCOB" ColumnName="MGASTOCOB" />
+          <ScalarProperty Name="MHONORARIO" ColumnName="MHONORARIO" />
+          <ScalarProperty Name="MINTERES" ColumnName="MINTERES" />
+          <ScalarProperty Name="MPAGO" ColumnName="MPAGO" />
+          <ScalarProperty Name="MREAJUSTE" ColumnName="MREAJUSTE" />
+          <ScalarProperty Name="MRECARGO" ColumnName="MRECARGO" />
+          <ScalarProperty Name="PERIODO_RECAU" ColumnName="PERIODO_RECAU" />
+          <ScalarProperty Name="PERIODO_REMUN" ColumnName="PERIODO_REMUN" />
+          <ScalarProperty Name="SUBPRODUCTO" ColumnName="SUBPRODUCTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PKG_DETALLE_COTIZACIONES_DETCOTIZACIONES" FunctionName="IngresosProdModel.Store.PKG_DETALLE_COTIZACIONES_DETCOTIZACIONES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IngresosProdModel.DetCotizacionesEntity">
+          <ScalarProperty Name="ENPA_RUT" ColumnName="ENPA_RUT" />
+          <ScalarProperty Name="EMPL_TNOMBRE_RAZON_SOCIAL" ColumnName="EMPL_TNOMBRE_RAZON_SOCIAL" />
+          <ScalarProperty Name="ABON_PEREM" ColumnName="ABON_PEREM" />
+          <ScalarProperty Name="ABON_FECPAG" ColumnName="ABON_FECPAG" />
+          <ScalarProperty Name="ABON_VALOR" ColumnName="ABON_VALOR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

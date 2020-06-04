@@ -1,0 +1,143 @@
+﻿@model WS_Ingresos.Models.Dto.CartolaExcedentesViewModel
+
+@{
+    Layout = null;
+
+    var gridExcedentes = new WebGrid(source: @Model.excedentes, canPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Isapre Banmédica</title>
+    <link href="~/Content/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="right-columnImprimir">
+        <div>
+            <table width="100%">
+                <tr>
+                    <td width="50%" align="left">
+                        <img src="~/Content/images/logo_certificado.gif" alt="Banmédica" />
+                    </td>                    
+                    <td width="50%" align="right"></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <h1 align="center">Cartola de Excedentes</h1>
+        <p align="right">
+            <br />
+            <br />
+            Santiago, @Model.fecha
+        </p>
+        <br />
+        <p>
+            <strong><u>Datos Personales&nbsp; </u></strong>
+
+        </p>
+        <p>&nbsp;</p>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="130"><strong>Nombre </strong></td>
+                <td width="200">@Model.nombreAfiliado</td>
+                <td width="65"><strong>Rut</strong></td>
+                <td width="265">@Model.rutAfiliado</td>
+            </tr>
+            <tr>
+                <td><strong>Direcci&oacute;n Particular</strong></td>
+                <td>@String.Format("{0}, {1}, {2}", Model.direccion, Model.comuna, Model.ciudad)</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Teléfono</strong></td>
+                <td>@Model.fono</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <div class="separador"></div>
+
+        <p><strong><u>Datos Empleador</u></strong></p>
+        <p>&nbsp;</p>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="130"><strong>Nombre </strong></td>
+                <td width="200">
+                    @Model.empleador.nombreRazonSocial
+                </td>
+                <td width="65"><strong>Rut</strong></td>
+                <td width="265">
+                    @String.Format("{0}-{1}", Model.empleador.rut.ToString("N0"), Model.empleador.dv)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Direcci&oacute;n Laboral</strong></td>
+                <td>
+                    @String.Format("{0} {1}", Model.empleador.calle, Model.empleador.numero),
+                    @Model.empleador.comuna,
+                    @Model.empleador.ciudad
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <div class="separador"></div>
+        <p>&nbsp;</p>
+        <p><strong><u>Detalle por Período</u></strong></p>
+        <p>&nbsp;</p>
+        <div class="datos_tabla datos_tablachico">
+            @if (Model.excedentes.Count() > 0)
+            {
+                @gridExcedentes.GetHtml(
+                                        tableStyle: "datos_tabla datos_tablachico",
+                                        headerStyle: "primero primero_arriba",
+                                        columns:
+                                            gridExcedentes.Columns(
+                                                    gridExcedentes.Column(columnName: "premun", header: "Periodo", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "mexcedente", header: "Excedente", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "mreajuste", header: "Reajuste", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "minteres", header: "Interés", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "mcomision", header: "Comisión", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "muso", header: "Uso de Excedentes", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "msaldo", header: "Saldo Contable", style: "centrado"),
+                                                    gridExcedentes.Column(columnName: "mdisponible", header: "Saldo Disponible", style: "centrado")
+                                            )
+                                   )
+            }
+            else
+            {
+                <div class="datos_tabla datos_tablachico">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="8" align="center">No Tiene Excedentes Actualmente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <div class="centrado">
+            <table border="0" cellpadding="0" cellspacing="0" style="margin-left: 270px;">
+                <tr>
+                    <td align="center">
+                        <img src="~/Content/images/firma_certificado.gif" alt="firma" width="130" height="110" />                        
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        pp. Isapre Banmédica
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
